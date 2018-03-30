@@ -1,8 +1,12 @@
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Map;
+
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.*;
@@ -11,17 +15,30 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class Scrapper
 {
+    JSONParser parser;
     private String areaCode;
     private int indexOfRestaurantCode = 3;
-
-    Scrapper(String areaCode)
-    {
+    private JSONObject json;
+    private Document doc;
+    private Map<String, String> cookies;
+    Scrapper(String areaCode) throws Exception {
         this.areaCode = areaCode;
+        parser = new JSONParser();
     }
 
 
     public void run() throws Exception       // throws time out exception #fixme
     {
+        String userName="09173601338";
+        String password="saed.saeed";
+        String lat="32.739075";
+        String lon="50.510666";
+        if(login(userName,password)) {
+            String address[]=getAddress();
+            lat=address[0];
+            lon=address[1];
+        }
+        String address=createAddressUrl(lat,lon);
         int pageNumber = 0;
         Document doc = getRestaurantsHtml(areaCode, pageNumber);
         while (doc != null)
@@ -38,9 +55,45 @@ public class Scrapper
             doc = getRestaurantsHtml(areaCode, pageNumber);
         }
     }
-
-
-    private Document getRestaurantsHtml(String areaCode, int pageNumber) throws Exception
+    private boolean login(String userName,String password) throws Exception {
+        String loginMethod="password";
+        Connection.Response baseForm = Jsoup.connect(Config.baseUrl).method(Connection.Method.GET).execute();
+        Connection.Response doc = Jsoup.connect(Config.login_link).ignoreContentType(true)
+                .data("_username", userName)
+                .data("_password", password)
+                .data("_login_method",loginMethod)
+                .method(Connection.Method.POST).cookies(baseForm.cookies())
+                .execute();
+        cookies=doc.cookies();
+        json=(JSONObject)parser.parse(doc.body());
+        if (json.get("status").toString()=="true"){
+            return true;
+        }
+        else
+            return false;
+    }
+    private String[] getAddress() throws Exception {
+        doc= Jsoup.connect(Config.my_address_link).ignoreContentType(true).method(Connection.Method.GET).cookies(cookies).get();
+        JSONArray jsonArray= (JSONArray) parser.parse(doc.body().text());
+        json=(JSONObject)jsonArray.get(0);
+        String address[]=new String[2];
+        address[0]=json.get("latitude").toString();
+        address[1]=json.get("longitude").toString();
+        return address;
+    }
+    private String createAddressUrl(String lat,String lon) throws Exception{
+        doc= Jsoup.connect(Config.location_link).ignoreContentType(true)
+                .data("lat",lat)
+                .data("long",lon)
+                .method(Connection.Method.POST)
+                .cookies(cookies)
+                .post();
+        json=(JSONObject)parser.parse(doc.body().text());
+        String address=Config.address_link+json.get("cityCode")+"/near/"+json.get("areaId")
+                +"?lat="+json.get("lat")+"&long="+json.get("long");
+        return address;
+    }
+    private Document getRestaurantsHtml(String areaCode, int pageNumber) throws Exception //#fixme
     {
         String url = Config.restaurants_link + areaCode + "?" + "page=" + pageNumber;
         URL obj = new URL(url);
@@ -122,8 +175,7 @@ public class Scrapper
                 response.append(inputLine);
             }
             in.close();
-            JSONParser parser = new JSONParser();
-            JSONObject json = (JSONObject) parser.parse(response.toString());
+            json = (JSONObject) parser.parse(response.toString());
             String html = (String) json.get("html");
             return Jsoup.parse(html);
         }
