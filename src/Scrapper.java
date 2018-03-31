@@ -2,7 +2,6 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -16,13 +15,11 @@ import javax.net.ssl.HttpsURLConnection;
 public class Scrapper
 {
     JSONParser parser;
-    private String areaCode;
     private int indexOfRestaurantCode = 3;
     private JSONObject json;
     private Document doc;
     private Map<String, String> cookies;
-    Scrapper(String areaCode) throws Exception {
-        this.areaCode = areaCode;
+    Scrapper() throws Exception {
         parser = new JSONParser();
     }
 
@@ -33,14 +30,15 @@ public class Scrapper
         String password="saed.saeed";
         String lat="32.739075";
         String lon="50.510666";
-        if(login(userName,password)) {
+        if(login(userName,password))
+        {
             String address[]=getAddress();
-            lat=address[0];
-            lon=address[1];
+            lat = address[0];
+            lon = address[1];
         }
-        String address=createAddressUrl(lat,lon);
+        String restaurantPageAddress = createAddressUrl(lat,lon);
         int pageNumber = 0;
-        Document doc = getRestaurantsHtml(areaCode, pageNumber);
+        Document doc = getRestaurantsHtml(restaurantPageAddress, pageNumber);
         while (doc != null)
         {
             Elements restaurantDivs = doc.getElementsByClass(Config.restaurants_class);
@@ -52,9 +50,11 @@ public class Scrapper
                 printDetails(restaurantName, restaurantCode);
             }
             pageNumber++;
-            doc = getRestaurantsHtml(areaCode, pageNumber);
+            doc = getRestaurantsHtml(restaurantPageAddress, pageNumber);
         }
     }
+
+
     private boolean login(String userName,String password) throws Exception {
         String loginMethod="password";
         Connection.Response baseForm = Jsoup.connect(Config.baseUrl).method(Connection.Method.GET).execute();
@@ -72,30 +72,38 @@ public class Scrapper
         else
             return false;
     }
-    private String[] getAddress() throws Exception {
-        doc= Jsoup.connect(Config.my_address_link).ignoreContentType(true).method(Connection.Method.GET).cookies(cookies).get();
-        JSONArray jsonArray= (JSONArray) parser.parse(doc.body().text());
+
+
+    private String[] getAddress() throws Exception     // #fixme
+    {
+        doc = Jsoup.connect(Config.my_address_link).ignoreContentType(true).method(Connection.Method.GET).cookies(cookies).get();
+        JSONArray jsonArray = (JSONArray) parser.parse(doc.body().text());
         json=(JSONObject)jsonArray.get(0);
-        String address[]=new String[2];
-        address[0]=json.get("latitude").toString();
-        address[1]=json.get("longitude").toString();
+        String address[] = new String[2];
+        address[0] = json.get("latitude").toString();
+        address[1] = json.get("longitude").toString();
         return address;
     }
-    private String createAddressUrl(String lat,String lon) throws Exception{
-        doc= Jsoup.connect(Config.location_link).ignoreContentType(true)
+
+
+    private String createAddressUrl(String lat,String lon) throws Exception
+    {
+        doc = Jsoup.connect(Config.location_link).ignoreContentType(true)
                 .data("lat",lat)
                 .data("long",lon)
                 .method(Connection.Method.POST)
                 .cookies(cookies)
                 .post();
         json=(JSONObject)parser.parse(doc.body().text());
-        String address=Config.address_link+json.get("cityCode")+"/near/"+json.get("areaId")
-                +"?lat="+json.get("lat")+"&long="+json.get("long");
+        String address = Config.address_link + json.get("cityCode")+"/near/" + json.get("areaId")
+                +"?lat=" + json.get("lat") + "&long=" + json.get("long");
         return address;
     }
-    private Document getRestaurantsHtml(String areaCode, int pageNumber) throws Exception //#fixme
+
+
+    private Document getRestaurantsHtml(String restaurantPageAddress, int pageNumber) throws Exception //#fixme
     {
-        String url = Config.restaurants_link + areaCode + "?" + "page=" + pageNumber;
+        String url =  restaurantPageAddress + "&" + "page=" + pageNumber;
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
