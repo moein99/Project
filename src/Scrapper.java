@@ -28,10 +28,9 @@ public class Scrapper
     {
         String userName="09173601338";
         String password="saed.saeed";
-        String lat="32.739075";
         String lon="50.510666";
-        if(login(userName,password))
-        {
+        String lat="32.739075";
+        if(login(userName,password)) {
             String address[]=getAddress();
             lat = address[0];
             lon = address[1];
