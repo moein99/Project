@@ -7,5 +7,8 @@ public class Main
     {
         Scrapper scrapper = new Scrapper();
         scrapper.run();
+        ShoppingAgent sh = new ShoppingAgent();
+        sh.Login();
+        sh.SabteSefaresh();
     }
 }
