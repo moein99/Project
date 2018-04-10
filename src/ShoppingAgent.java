@@ -1,15 +1,121 @@
-
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
-import java.util.Scanner;
-/**
- * Created by AMIR-LMPD on 4/3/2018.
- */
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Scanner;
 
 
 public class ShoppingAgent {
+    private Scrapper scrapper;
+    private boolean scrapperStatus;
+    private ArrayList<String> requests;
+    private Map<String, String> cookies;
 
+
+    ShoppingAgent() {
+        scrapper = new Scrapper();
+        scrapperStatus = false;
+        requests = new ArrayList<>();
+    }
+
+
+    public void runScrapper() {
+        scrapper.run(true);
+        scrapperStatus = true;
+        cookies = scrapper.getCookies();
+    }
+
+
+    public void addRequest(String restaurantName, ArrayList<String> productNames) {
+        if (!scrapperStatus) {
+            runScrapper();
+        }
+        Map<String, String> data = scrapper.getData();
+        for (String food : productNames) {
+            requests.add(data.get(restaurantName + " " + food));
+        }
+    }
+
+
+    public void submitRequest() throws IOException
+    {
+        ArrayList<String> numbers=new ArrayList<>();
+        String addingToBasket_link = Config.addingToBasket_link;
+        String vendorCode;
+        String operationMode = "1";
+        String productId;
+        String lastProductId;
+        String[] temp;
+        String[] temp1;
+        for (String request : requests)
+        {
+            temp = request.split(" ");
+            temp1 = temp[0].split(":");
+            numbers.add(temp1[1]);
+            temp1 = temp[1].split(":");
+            numbers.add(temp1[1]);
+        }
+        int counter=0;
+        while (counter<numbers.size())
+        {
+            vendorCode= numbers.get(counter);
+            productId=numbers.get(counter+1);
+            if(counter>=2)
+            {
+                lastProductId=numbers.get(counter-1);
+            }
+            else{lastProductId=numbers.get(1);}
+            Connection.Response execute = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
+                    data("vendor_code",vendorCode).
+                    data("operation_mode",operationMode).
+                    data("product_id",productId).
+                    data("last_target_id",lastProductId).method(Connection.Method.POST).cookies(cookies)
+                    .execute();
+
+            Document doc = execute.parse();
+            cookies = execute.cookies();
+            if(doc.body().toString().contains("\"status\":\"1\""))
+            {
+                System.out.println("added to basket!");
+            }
+            counter+=2;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     public int Login()
     {
         try {
@@ -21,23 +127,18 @@ public class ShoppingAgent {
             Scanner input = new Scanner(System.in);
             String number;
             String pass;
-            System.out.println("شماره ی خود را وارد کنبد :");
             number = input.next();
-            System.out.println("رمز عبور خود را وارد کنید :");
             pass = input.next();
             if(number.length() != 11)
             {
-                System.out.println("فرمت شماره موبایل اشتباه می باشد");
                 return 0;
             }
             else if (number.length() == 0)
             {
-                System.out.println("شماره خود را وارد نکردید");
                 return 0;
             }
             else if (number.length() == 0)
             {
-                System.out.println("رمز خود را وارد نکردید");
                 return 0;
             }
             Document response = Jsoup.connect("https://snappfood.ir/auth/login_check")
@@ -68,8 +169,10 @@ public class ShoppingAgent {
         }
         return 0;
     }
+    */
 
 /* TODO */
+/*
     public int SabteSefaresh()
     {
         try
@@ -117,3 +220,4 @@ public class ShoppingAgent {
     }
 }
 
+*/

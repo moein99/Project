@@ -5,9 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddingToBasket {
-
-    public static void main(String[] args)throws IOException {
+public class AddingToBasket
+{
+    public static void main(String[] args)throws IOException
+    {
         String address1="https://snappfood.ir/order/cart/update/";
         String txtAddress ="D:\\TahlilProject\\Jsoup\\src\\order.txt";
         ArrayList<String> numbers=new ArrayList<>();
@@ -22,26 +23,6 @@ public class AddingToBasket {
             String[] array=temp.split(":");
             numbers.add(array[1]);
         }
-        int counter=0;
-        while (counter<numbers.size())
-        {
-            vendorCode= numbers.get(counter);
-            productId=numbers.get(counter+1);
-            if(counter>=2)
-            {
-                lastProductId=numbers.get(counter-1);
-            }
-            else{lastProductId=numbers.get(1);}
-            Document execute = Jsoup.connect(address1).ignoreContentType(true).
-                    data("vendor_code",vendorCode).
-                    data("operation_mode",operationMode).
-                    data("product_id",productId).
-                    data("last_target_id",lastProductId).post();
-            String body = execute.body().toString();
-            if (body.contains("\"status\":\"1\"")) {
-                System.out.println("Added to Basket!");
-            }
-            counter+=2;
-        }
+
     }
-    }
+}

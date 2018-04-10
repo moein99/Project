@@ -36,6 +36,22 @@ public class Scrapper
 
     public void run(boolean show)
     {
+        Connection.Response baseForm;
+        boolean flag = true;
+        while (flag)
+        {
+            try {
+                baseForm = Jsoup.connect(Config.baseUrl).method(Connection.Method.GET).execute();
+                cookies = baseForm.cookies();
+                flag = false;
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+
+
         String userName = "09368714321";
         String password = "moeincarnal77";
         String lat = "32.739075";
@@ -59,7 +75,8 @@ public class Scrapper
                 printDetails(restaurantName, restaurantCode, show);
             }
             pageNumber++;
-            doc = getRestaurantsHtml(restaurantPageAddress, pageNumber);
+            //doc = getRestaurantsHtml(restaurantPageAddress, pageNumber);
+            doc = null;
         }
         scrapeDone = true;
     }
@@ -70,12 +87,11 @@ public class Scrapper
         try
         {
             String loginMethod = "password";
-            Connection.Response baseForm = Jsoup.connect(Config.baseUrl).method(Connection.Method.GET).execute();
             Connection.Response doc = Jsoup.connect(Config.login_link).ignoreContentType(true)
                     .data("_username", userName)
                     .data("_password", password)
                     .data("_login_method",loginMethod)
-                    .method(Connection.Method.POST).cookies(baseForm.cookies())
+                    .method(Connection.Method.POST).cookies(cookies)
                     .execute();
             cookies = doc.cookies();
             json = (JSONObject)parser.parse(doc.body());
@@ -297,11 +313,11 @@ public class Scrapper
     private String getVenCodeAndProId(Element foodDiv, String foodName)
     {
         String data[] = foodDiv.getElementsByTag("a").attr("data-hashtags").split("::");
-        return "vendorCode:" + data[0] + "%*%" + "productId:" + data[1];
+        return "vendorCode:" + data[0] + " " + "productId:" + data[1];
     }
 
 
-    public void addRequest(String restaurantName, ArrayList<String> productNames)
+    /*public void addRequest(String restaurantName, ArrayList<String> productNames)
     {
         if (!scrapeDone)
         {
@@ -325,7 +341,15 @@ public class Scrapper
         {
             e.printStackTrace();
         }
+    }*/
+
+    public Map<String, String> getData()
+    {
+        return data;
     }
 
-
+    public Map<String, String> getCookies()
+    {
+        return cookies;
+    }
 }
