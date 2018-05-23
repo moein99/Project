@@ -112,9 +112,7 @@ public class ShoppingAgent {
         String productId = "-1";
         String vendorCode;
         numbers =requestFetch(numbers);
-        int counter=0;
-        while (counter<numbers.size()) {
-            vendorCode = numbers.get(counter);
+        vendorCode = numbers.get(0);
             Connection.Response execute = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
                     data("address_id",address_id).
                     data("is_checkout",is_checkout).
@@ -123,15 +121,11 @@ public class ShoppingAgent {
                     data("product_id", productId).
                     data("vendor_code", vendorCode).method(Connection.Method.POST).cookies(cookies)
                     .execute();
-
             Document doc = execute.parse();
             cookies = execute.cookies();
             if (doc.body().toString().contains("\"status\":\"1\"")) {
                 System.out.println("Address Submited!");
             }
-            counter += 2;
-        }
-
     }
     public void goBank() throws IOException {
         ArrayList<String> numbers=new ArrayList<>();

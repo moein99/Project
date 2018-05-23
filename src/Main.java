@@ -15,5 +15,8 @@ public class Main
         data.add("پیتزا چانو (ایتالیایی)");
         shoppingAgent.addRequest(restaurantName, data);
         shoppingAgent.submitRequest();
+        shoppingAgent.submit();
+        shoppingAgent.submitAddress();
+        shoppingAgent.goBank();
     }
 }
