@@ -17,7 +17,7 @@ public class Config
     public static String baseUrl = "https://snappfood.ir";
     public static String address_link = "https://snappfood.ir/restaurant/city/";
     public static String addingToBasket_link = "https://snappfood.ir/order/cart/update/";
-
+    public static String bank_payment="https://snappfood.ir/order/handle/vendor/";
     public static Document getDocument(String url)
     {
         Document document;
