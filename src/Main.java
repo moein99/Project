@@ -10,8 +10,8 @@ public class Main
         ShoppingAgent shoppingAgent = new ShoppingAgent();
         shoppingAgent.runScrapper();
         ArrayList<String> data = new ArrayList<>();
-        String restaurantName = "پیتزا سیب 360 (تهرانپارس)";
-        data.add("ژامبون گوشت");
+        String restaurantName = "عطاویچ (تهرانپارس)";
+        data.add("سالاد سزار");
         shoppingAgent.addRequest(restaurantName, data);
         shoppingAgent.submitRequest();
         shoppingAgent.submit();
