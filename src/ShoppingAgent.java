@@ -1,7 +1,10 @@
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
@@ -105,7 +108,7 @@ public class ShoppingAgent {
     public void submitAddress() throws IOException {
         ArrayList<String> numbers=new ArrayList<>();
         String addingToBasket_link = Config.addingToBasket_link;
-        String address_id="13722056"; //Almoein must get me this number
+        String address_id="3737635"; //Almoein must get me this number
         String is_checkout="true";
         String operationMode = "5";
         String payment_type="online";
@@ -113,30 +116,30 @@ public class ShoppingAgent {
         String vendorCode;
         numbers =requestFetch(numbers);
         vendorCode = numbers.get(0);
-            Connection.Response execute = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
-                    data("address_id",address_id).
-                    data("is_checkout",is_checkout).
-                    data("operation_mode", operationMode).
-                    data("payment_type", payment_type).
-                    data("product_id", productId).
-                    data("vendor_code", vendorCode).method(Connection.Method.POST).cookies(cookies)
-                    .execute();
-            Document doc = execute.parse();
-            cookies = execute.cookies();
-            if (doc.body().toString().contains("\"status\":\"1\"")) {
-                System.out.println("Address Submited!");
-            }
+        Connection.Response execute = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
+                data("address_id",address_id).
+                data("is_checkout",is_checkout).
+                data("operation_mode", operationMode).
+                data("payment_type", payment_type).
+                data("product_id", productId).
+                data("vendor_code", vendorCode).method(Connection.Method.POST).cookies(cookies)
+                .execute();
+        Document doc = execute.parse();
+        cookies = execute.cookies();
+        if (doc.body().toString().contains("\"status\":\"1\"")) {
+            System.out.println("Address Submited!");
+        }
     }
     public void goBank() throws IOException {
         ArrayList<String> numbers=new ArrayList<>();
         String bank_payment = Config.bank_payment;
         String online_pay_type="AP";
         String payment_method="online_payment";
-        String SelectAddresses_addressType="";
+        String SelectAddresses_addressType="select";
         String SelectAddresses_latitude="";
         String SelectAddresses_longitude="";
         String SelectAddresses_payType="ONLINE";
-        String SelectAddresses_slAddress="1372056";
+        String SelectAddresses_slAddress="3737635";
         String voucher_input="";
         String vendorCode;
         numbers =requestFetch(numbers);
@@ -152,7 +155,13 @@ public class ShoppingAgent {
                 data("voucher_input", voucher_input).method(Connection.Method.POST).cookies(cookies)
                 .execute();
         System.out.println("banked!");
+        Desktop d = Desktop.getDesktop();
+        try {
+            d.browse(new URI("https://snappfood.ir/order/checkout/vendor/37qnm0"));
+        } catch (IOException | URISyntaxException e2) {
+            e2.printStackTrace();
         }
+    }
     private ArrayList<String> requestFetch(ArrayList<String> numbers) {
         String[] temp;
         String[] temp1;

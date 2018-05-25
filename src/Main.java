@@ -11,8 +11,7 @@ public class Main
         shoppingAgent.runScrapper();
         ArrayList<String> data = new ArrayList<>();
         String restaurantName = "پیتزا سیب 360 (تهرانپارس)";
-        data.add("همبرگر");
-        data.add("پیتزا چانو (ایتالیایی)");
+        data.add("ژامبون گوشت");
         shoppingAgent.addRequest(restaurantName, data);
         shoppingAgent.submitRequest();
         shoppingAgent.submit();

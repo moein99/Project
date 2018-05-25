@@ -59,8 +59,8 @@ public class Scrapper
         String address[] = null;
         if(login(userName,password))
             address = getAddress();
-            lat = address[0];
-            lon = address[1];
+        lat = address[0];
+        lon = address[1];
         String restaurantPageAddress = createAddressUrl(lat,lon);
         int pageNumber = 0;
         Document doc = getRestaurantsHtml(restaurantPageAddress, pageNumber);
