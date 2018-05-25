@@ -7,12 +7,15 @@ public class Main
 {
     public static void main( String[] args ) throws Exception
     {
-        Scrapper scrapper = new Scrapper();
-        scrapper.run(true);
+        ShoppingAgent shoppingAgent = new ShoppingAgent();
+        shoppingAgent.runScrapper();
         ArrayList<String> data = new ArrayList<>();
-        String restaurantName = "پیتزا پرپروک (هفت حوض)";
-        data.add("مرغ سوخاری معمولی دو تکه");
-        data.add("همبرگر مخصوص");
-        scrapper.addRequest(restaurantName, data);
+        String restaurantName = "عطاویچ (تهرانپارس)";
+        data.add("سالاد سزار");
+        shoppingAgent.addRequest(restaurantName, data);
+        shoppingAgent.submitRequest();
+        shoppingAgent.submit();
+        shoppingAgent.submitAddress();
+        shoppingAgent.goBank();
     }
 }

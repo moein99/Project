@@ -1,2 +1,3 @@
-vendorCode:0wvov3%*%productId:1093897
-vendorCode:0wvov3%*%productId:1093892
+vendorCode:0wvov3 productId:1093897
+
+vendorCode:0wvov3 productId:1093892
