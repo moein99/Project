@@ -10,8 +10,10 @@ public class Main
         ShoppingAgent shoppingAgent = new ShoppingAgent();
         shoppingAgent.runScrapper();
         ArrayList<String> data = new ArrayList<>();
-        String restaurantName = "عطاویچ (تهرانپارس)";
-        data.add("سالاد سزار");
+        String restaurantName = "کترینگ ماندگار";
+        data.add("خورشت قیمه با کته");
+        data.add("خورشت قیمه با کته");
+        data.add("خورشت قورمه سبزی با کته");
         shoppingAgent.addRequest(restaurantName, data);
         shoppingAgent.submitRequest();
         shoppingAgent.submit();

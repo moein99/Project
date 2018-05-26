@@ -1,11 +1,12 @@
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
 
+import javax.net.ssl.HttpsURLConnection;
 import java.awt.*;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.net.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -28,6 +29,7 @@ public class ShoppingAgent {
         scrapper.run(true);
         scrapperStatus = true;
         cookies = scrapper.getCookies();
+//        System.out.println(cookies);
     }
 
 
@@ -58,18 +60,20 @@ public class ShoppingAgent {
             productId=numbers.get(counter+1);
             if(counter>=2)
             {
-                lastProductId=numbers.get(counter-1);
+                lastProductId=numbers.get(counter+1);
             }
             else{lastProductId=numbers.get(1);}
-            Connection.Response execute = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
+            Connection.Response execut = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
                     data("vendor_code",vendorCode).
                     data("operation_mode",operationMode).
                     data("product_id",productId).
                     data("last_target_id",lastProductId).method(Connection.Method.POST).cookies(cookies)
                     .execute();
 
-            Document doc = execute.parse();
-            cookies = execute.cookies();
+            Document doc = execut.parse();
+//            cookies =new HashMap<>();
+//            cookies = execut.cookies();
+//            System.out.println(cookies);
             if(doc.body().toString().contains("\"status\":\"1\""))
             {
                 System.out.println("added to basket!");
@@ -99,6 +103,7 @@ public class ShoppingAgent {
 
             Document doc = execute.parse();
             cookies = execute.cookies();
+            System.out.println(cookies);
             if (doc.body().toString().contains("\"status\":\"1\"")) {
                 System.out.println("Submited!");
             }
@@ -130,7 +135,7 @@ public class ShoppingAgent {
             System.out.println("Address Submited!");
         }
     }
-    public void goBank() throws IOException {
+    public void goBank() throws Exception {
         ArrayList<String> numbers=new ArrayList<>();
         String bank_payment = Config.bank_payment;
         String online_pay_type="AP";
@@ -167,6 +172,7 @@ public class ShoppingAgent {
         String[] temp1;
         for (String request : requests)
         {
+
             temp = request.split(" ");
             temp1 = temp[0].split(":");
             numbers.add(temp1[1]);
@@ -176,4 +182,3 @@ public class ShoppingAgent {
         return numbers;
     }
 }
-

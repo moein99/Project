@@ -93,6 +93,7 @@ public class Scrapper
                     .data("_login_method",loginMethod)
                     .method(Connection.Method.POST).cookies(cookies)
                     .execute();
+            cookies = new HashMap<>();
             cookies = doc.cookies();
             json = (JSONObject)parser.parse(doc.body());
             if (json.get("status").toString().equals("true"))
