@@ -1,18 +1,19 @@
-import java.util.ArrayList;
+import Search.View.MenuPage;
+import Search.View.SearchPage;
 
-/**
- * Created by moein on 3/29/2018.
- */
+import java.util.Scanner;
+
 public class Main
 {
-    public static void main( String[] args ) throws Exception
+    public static void main(String[] args)
     {
-        Scrapper scrapper = new Scrapper();
-        scrapper.run(true);
-        ArrayList<String> data = new ArrayList<>();
-        String restaurantName = "پیتزا پرپروک (هفت حوض)";
-        data.add("مرغ سوخاری معمولی دو تکه");
-        data.add("همبرگر مخصوص");
-        scrapper.addRequest(restaurantName, data);
+        String location = "lat=35.739328144512&long=51.512247249484";
+        String key = "restaurantAPI";
+        SearchPage searchPage = new SearchPage();
+        searchPage.SearchEventHandler(location);
+        Scanner input = new Scanner(System.in);
+        String venCode = input.nextLine();
+        MenuPage menuPage = new MenuPage();
+        menuPage.restaurantBEventHandler(venCode);
     }
 }

@@ -1,10 +1,6 @@
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+package Search.Model;
 
-import java.io.IOException;
-
-public class Config
+public class URLModel
 {
     public static String menu_link = "https://snapp-food.com/restaurant/menu/load";
     public static String restaurants_link = "https://snapp-food.com/restaurant/city/tehran/area/";
@@ -16,26 +12,6 @@ public class Config
     public static String location_link = "https://snappfood.ir/restaurant/location";
     public static String baseUrl = "https://snappfood.ir";
     public static String address_link = "https://snappfood.ir/restaurant/city/";
-
-    public static Document getDocument(String url)
-    {
-        Document document;
-        try
-        {
-            document = Jsoup.connect(url).get();
-            return document;
-        }
-        catch (java.net.SocketTimeoutException e)
-        {
-            System.out.println("Time out exception ...! \nRunning again ...!");
-            return getDocument(url);
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-
+    public static String addingToBasket_link = "https://snappfood.ir/order/cart/update/";
+    public static String bank_payment="https://snappfood.ir/order/handle/vendor/";
 }
