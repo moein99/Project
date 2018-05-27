@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="Search:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/Search_war</output-path>
+    <root id="archive" name="Search_war.war">
+      <element id="artifact" artifact-name="Search:war exploded" />
+    </root>
+  </artifact>
+</component>
