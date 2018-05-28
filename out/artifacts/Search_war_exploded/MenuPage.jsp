@@ -11,11 +11,6 @@
 <html>
 <head>
     <title>Menu</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -26,20 +21,19 @@
     SnappFoodCtrl snappController = new SnappFoodCtrl();
     snappController.setAPI(key, venCode);
     JSONArray data = snappController.getMenu(snappController.getAPI(), venCode);
-    JSONArray jsonArray;
-    out.println("<table class=\"table table-striped table-dark\">");
-    out.println("<tr><th scope=\"col\">productName</th><th scope=\"col\">vendorCodeAndProductId</th><th scope=\"col\">Price</th></tr>");
-    for (int i = 0; i < data.size(); i++)
+    JSONArray jsonArray;%>
+    <table class="table table-striped table-dark">
+    <tr><th scope="col">productName</th><th scope="col">vendorCodeAndProductId</th><th scope="col">Price</th></tr>
+    <%for (int i = 0; i < data.size(); i++)
     {
-        out.println("<tr>");
         jsonArray = (JSONArray) data.get(i);
         JSONObject first = (JSONObject)jsonArray.get(0);
-        JSONObject second = (JSONObject)jsonArray.get(1);
-        out.println("<tr>"+"<td>"+first.keySet().toString()+"</td><td scope=\"row\">"
-                + first.values().toString()+"</td><td scope=\"row\">"
-                +second.values().toString()+"</td></tr>");
-    }
-    out.println("</table>");
-%>
+        JSONObject second = (JSONObject)jsonArray.get(1);%>
+        <tr><td scope="row"><%out.println(first.keySet().toString());%></td><td scope="row">
+                <%out.println(first.values().toString());%></td><td scope="row">
+                <%out.println(second.values().toString());%></td></tr>
+    <%}%>
+    </table>
+
 </body>
 </html>
