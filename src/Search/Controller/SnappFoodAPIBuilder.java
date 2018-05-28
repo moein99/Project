@@ -20,6 +20,10 @@ public class SnappFoodAPIBuilder extends SystemAPIBuilder{
 		else if(key.equals("menuAPI")){
 			return getURL(key);
 		}
+		else if (key.equals("addToBasket"))
+		{
+			return getURL(key);
+		}
 		return null;
 	}
 
@@ -61,6 +65,10 @@ public class SnappFoodAPIBuilder extends SystemAPIBuilder{
 		}
 		else if(key.equals("menuAPI")){
 			return URLModel.menu_link;
+		}
+		else if(key.equals("addToBasket"))
+		{
+			return URLModel.addingToBasket_link;
 		}
 		return null;
 	}

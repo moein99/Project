@@ -2,8 +2,8 @@
 <%@ page import="org.json.simple.JSONObject" %>
 <%@ page import="org.json.simple.JSONArray" %>
 <%@ page import="Search.Controller.SnappFoodCtrl" %>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<%@ page pageEncoding="utf-8" %>--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="utf-8" %>
 <html>
 <head>
     <%--<style>--%>
@@ -35,7 +35,7 @@
         byte ptext[] = jsonObject.keySet().toString().getBytes();
         String name = new String(ptext, "UTF-8");
         code =jsonObject.values().toString();
-        out.println("<tr>"+"<td scope=\"row\">"+"<a href=\"two.jsp?code="+code.substring(1,code.length()-1)+"\">"+name
+        out.println("<tr>"+"<td scope=\"row\">"+"<a href=\"MenuPage.jsp?code="+code.substring(1,code.length()-1)+"\">"+name
                 +"</a></td> <td scope=\"row\">"+code+"</td></tr>");
     }
     out.println("</table>");

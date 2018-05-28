@@ -19,6 +19,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class SnappFoodCtrl extends SystemCtrl
 {
@@ -89,7 +90,7 @@ public class SnappFoodCtrl extends SystemCtrl
 				String data[] = el.getElementsByTag("a").attr("data-hashtags").split("::");
 				food = new JSONArray();
 				detail = new JSONObject();
-				detail.put(foodNameSpan.text(), "vendorCode:" + data[0] + " " + "productId:" + data[1]);
+				detail.put(foodNameSpan.text(), "productId:" + data[1]);
 				food.add(detail);
 				detail = new JSONObject();
 				detail.put(foodNameSpan.text(), "price: " + priceSpan.text());
@@ -194,42 +195,45 @@ public class SnappFoodCtrl extends SystemCtrl
 		}
 	}
 
-	public void addToBasket(String vendorCode,	ArrayList<String> productIds, String API) throws IOException
+	public void addToBasket(String vendorCode,	ArrayList<String> productIds, String API)
 	{
-
-		String addingToBasket_link = API;
+		Map<String, String> cookies = login("09368714321", "13771999");
 		String operationMode = "1";
-		for(String productId:productIds){
-			Connection.Response execut = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
-					data("vendor_code",vendorCode).
-					data("operation_mode",operationMode).
-					data("product_id",productId).
-					data("last_target_id",productId).method(Connection.Method.POST).cookies(cookies)
-					.execute();
-			Document doc = execut.parse();
-			if(doc.body().toString().contains("\"status\":\"1\""))
+		String is_checkout = "true";
+		String payment_type = "online";
+		operationMode = "5";
+		for(String productId:productIds)
+		{
+			try
 			{
-				System.out.println("added to basket!");
+				Connection.Response execut = Jsoup.connect(API).ignoreContentType(true).
+						data("vendor_code",vendorCode).
+						data("operation_mode",operationMode).
+						data("product_id",productId).
+						data("last_target_id",productId).method(Connection.Method.POST).cookies(cookies)
+						.execute();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
 			}
 		}
-		String is_checkout="true";
-		operationMode = "5";
-		String payment_type="online";
 		String productId = "-1";
-
-		for(String iter : productIds){
-			Connection.Response execute = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
-					data("is_checkout",is_checkout).
-					data("operation_mode", operationMode).
-					data("payment_type", payment_type).
-					data("product_id", productId).
-					data("vendor_code", vendorCode).method(Connection.Method.POST).cookies(cookies)
-					.execute();
-			Document doc = execute.parse();
-			cookies = execute.cookies();
-			System.out.println(cookies);
-			if (doc.body().toString().contains("\"status\":\"1\"")) {
-				System.out.println("Submited!");
+		for(int i = 0; i < productIds.size(); i++)
+		{
+			try
+			{
+				Connection.Response execute = Jsoup.connect(API).ignoreContentType(true).
+						data("is_checkout",is_checkout).
+						data("operation_mode", operationMode).
+						data("payment_type", payment_type).
+						data("product_id", productId).
+						data("vendor_code", vendorCode).method(Connection.Method.POST).cookies(cookies)
+						.execute();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
 			}
 		}
 		Desktop d = Desktop.getDesktop();
@@ -239,5 +243,46 @@ public class SnappFoodCtrl extends SystemCtrl
 			e2.printStackTrace();
 		}
 	}
+
+	private Map<String, String> login(String userName, String password)
+	{
+		try
+		{
+			Map<String, String> cookies;
+			JSONParser parser = new JSONParser();
+			JSONObject json;
+			String loginMethod = "password";
+			Connection.Response baseForm = Jsoup.connect("https://snappfood.ir").method(Connection.Method.GET).execute();
+			Connection.Response doc = Jsoup.connect("https://snappfood.ir/auth/login_check").ignoreContentType(true)
+					.data("_username", userName)
+					.data("_password", password)
+					.data("_login_method",loginMethod)
+					.method(Connection.Method.POST).cookies(baseForm.cookies())
+					.execute();
+			cookies = doc.cookies();
+			json = (JSONObject)parser.parse(doc.body());
+			if (json.get("status").toString().equals("true"))
+			{
+				return cookies;
+			}
+			else
+				return null;
+		}
+		catch (java.net.ConnectException e)
+		{
+			System.out.println("Connection Timed out !\n Running Again ...!");
+			return login(userName, password);
+		}
+		catch (org.json.simple.parser.ParseException e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+
 	}
 }

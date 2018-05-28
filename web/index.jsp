@@ -5,7 +5,7 @@
 <body>
 
 <div id="map" style="width:100%;height:600px;"></div>
-<form id="mapform" action="one.jsp">
+<form id="mapform" action="SearchPage.jsp">
     <input type="text" name="t1" id="t1" style="display: none;">
     <input type="button" value="Search" onclick="validaty()">
 </form>
