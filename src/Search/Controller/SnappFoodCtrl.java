@@ -1,6 +1,7 @@
 package Search.Controller;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -8,12 +9,16 @@ import org.jsoup.select.Elements;
 import org.json.simple.parser.JSONParser;
 
 import javax.net.ssl.HttpsURLConnection;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class SnappFoodCtrl extends SystemCtrl
 {
@@ -187,5 +192,52 @@ public class SnappFoodCtrl extends SystemCtrl
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	public void addToBasket(String vendorCode,	ArrayList<String> productIds, String API) throws IOException
+	{
+
+		String addingToBasket_link = API;
+		String operationMode = "1";
+		for(String productId:productIds){
+			Connection.Response execut = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
+					data("vendor_code",vendorCode).
+					data("operation_mode",operationMode).
+					data("product_id",productId).
+					data("last_target_id",productId).method(Connection.Method.POST).cookies(cookies)
+					.execute();
+			Document doc = execut.parse();
+			if(doc.body().toString().contains("\"status\":\"1\""))
+			{
+				System.out.println("added to basket!");
+			}
+		}
+		String is_checkout="true";
+		operationMode = "5";
+		String payment_type="online";
+		String productId = "-1";
+
+		for(String iter : productIds){
+			Connection.Response execute = Jsoup.connect(addingToBasket_link).ignoreContentType(true).
+					data("is_checkout",is_checkout).
+					data("operation_mode", operationMode).
+					data("payment_type", payment_type).
+					data("product_id", productId).
+					data("vendor_code", vendorCode).method(Connection.Method.POST).cookies(cookies)
+					.execute();
+			Document doc = execute.parse();
+			cookies = execute.cookies();
+			System.out.println(cookies);
+			if (doc.body().toString().contains("\"status\":\"1\"")) {
+				System.out.println("Submited!");
+			}
+		}
+		Desktop d = Desktop.getDesktop();
+		try {
+			d.browse(new URI("https://snappfood.ir/order/checkout/vendor/"+vendorCode));
+		} catch (IOException | URISyntaxException e2) {
+			e2.printStackTrace();
+		}
+	}
 	}
 }
