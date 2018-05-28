@@ -195,13 +195,12 @@ public class SnappFoodCtrl extends SystemCtrl
 		}
 	}
 
-	public void addToBasket(String vendorCode,	ArrayList<String> productIds, String API)
+	public boolean addToBasket(String vendorCode,	ArrayList<String> productIds, String API)
 	{
 		Map<String, String> cookies = login("09368714321", "13771999");
 		String operationMode = "1";
 		String is_checkout = "true";
 		String payment_type = "online";
-		operationMode = "5";
 		for(String productId:productIds)
 		{
 			try
@@ -216,9 +215,11 @@ public class SnappFoodCtrl extends SystemCtrl
 			catch (IOException e)
 			{
 				e.printStackTrace();
+				return false;
 			}
 		}
 		String productId = "-1";
+		operationMode = "5";
 		for(int i = 0; i < productIds.size(); i++)
 		{
 			try
@@ -234,6 +235,7 @@ public class SnappFoodCtrl extends SystemCtrl
 			catch (IOException e)
 			{
 				e.printStackTrace();
+				return false;
 			}
 		}
 		Desktop d = Desktop.getDesktop();
@@ -242,6 +244,7 @@ public class SnappFoodCtrl extends SystemCtrl
 		} catch (IOException | URISyntaxException e2) {
 			e2.printStackTrace();
 		}
+		return true;
 	}
 
 	private Map<String, String> login(String userName, String password)

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class SubmitPage
 {
     private final String key = "addToBasket";
-    private JSONArray data;
 
     public void submitEventHandler(String venCode, ArrayList<String> proIds)
     {
