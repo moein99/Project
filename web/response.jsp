@@ -14,7 +14,8 @@
     final String key = "addToBasket";
     SnappFoodCtrl snappController = new SnappFoodCtrl();
     snappController.setAPI(key, null);
-    snappController.addToBasket(venCode, proIds, snappController.getAPI());//fixme
+    snappController.addToBasket(venCode, proIds, snappController.getAPI());
     String url ="https://snappfood.ir/order/checkout/vendor/"+request.getParameter("code");
     response.sendRedirect(url);
+
 %>

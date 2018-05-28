@@ -10,6 +10,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <style>
+
+        .hover { cursor: pointer; }
+
+
+    </style>
     <title>Menu</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -32,7 +38,7 @@
         proId = first.values().toString().split(":")[1];
         proId= proId.substring(0,proId.length()-1);
         JSONObject second = (JSONObject)jsonArray.get(1);%>
-        <tr><td scope="row"><a href=""onclick="add(<%out.println(proId);%>)" ><%out.println(first.keySet().toString());%></a></td><td scope="row">
+        <tr><td class="hover" scope="row"onclick="add(<%out.println(proId);%>)" ><%out.println(first.keySet().toString());%></td><td scope="row">
                 <%out.println(proId);%></td><td scope="row">
                 <%out.println(second.values().toString());%></td></tr>
     <%}%>

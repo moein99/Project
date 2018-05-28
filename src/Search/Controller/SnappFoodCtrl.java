@@ -54,6 +54,7 @@ public class SnappFoodCtrl extends SystemCtrl
 			pageNumber++;
 			doc = getRestaurantsHtml(API, pageNumber, resClass);
 		}
+
 		return restaurants;
 	}
 
@@ -97,6 +98,12 @@ public class SnappFoodCtrl extends SystemCtrl
 				food.add(detail);
 				menu.add(food);
 			}
+		}
+		Desktop d = Desktop.getDesktop();
+		try {
+			d.browse(new URI("https://snappfood.ir/order/checkout/vendor/"+code));
+		} catch (IOException | URISyntaxException e2) {
+			e2.printStackTrace();
 		}
 		return menu;
 	}
@@ -238,12 +245,12 @@ public class SnappFoodCtrl extends SystemCtrl
 				return false;
 			}
 		}
-		Desktop d = Desktop.getDesktop();
-		try {
-			d.browse(new URI("https://snappfood.ir/order/checkout/vendor/"+vendorCode));
-		} catch (IOException | URISyntaxException e2) {
-			e2.printStackTrace();
-		}
+//		Desktop d = Desktop.getDesktop();
+//		try {
+//			d.browse(new URI("https://snappfood.ir/order/checkout/vendor/"+vendorCode));
+//		} catch (IOException | URISyntaxException e2) {
+//			e2.printStackTrace();
+//		}
 		return true;
 	}
 
