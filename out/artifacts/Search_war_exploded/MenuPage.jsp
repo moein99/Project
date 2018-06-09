@@ -96,8 +96,8 @@
                         <!-- single dish -->
                         <div class="single-dish hover">
                             <div  class="single-dish-heading">
-                                <h4 onclick="add(<%out.println(proId);%>)" class="name"><%out.println(first.keySet().toString());%></h4>
-                                <h4 class="price"><%out.println(second.values().toString());%></h4>
+                                <h4 onclick="add(<%out.println(proId);%>)" class="name"><%out.println(first.keySet().toString().substring(1, first.keySet().toString().length() - 1));%></h4>
+                                <h4 class="price"><%out.println(second.values().toString().substring(1, second.values().toString().length() - 1));%></h4>
                             </div>
                         </div>
                         <%}%>
@@ -116,8 +116,8 @@
                         <!-- single dish -->
                         <div class="single-dish hover">
                             <div onclick="add(<%out.println(proId);%>)" class="single-dish-heading">
-                                <h4 class="name"><%out.println(first.keySet().toString());%></h4>
-                                <h4 class="price"><%out.println(second.values().toString());%></h4>
+                                <h4 class="name"><%out.println(first.keySet().toString().substring(1, first.keySet().toString().length() - 1));%></h4>
+                                <h4 class="price"><%out.println(second.values().toString().substring(1, second.values().toString().length() - 1));%></h4>
                             </div>
                         </div>
                         <%}%>

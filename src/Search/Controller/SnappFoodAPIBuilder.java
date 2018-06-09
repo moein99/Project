@@ -18,7 +18,7 @@ public class SnappFoodAPIBuilder extends SystemAPIBuilder{
 			return createAddressUrl(data,getURL(key));
 		}
 		else if(key.equals("menuAPI")){
-			return getURL(key);
+			return getURL(key) + "?code=" + data + "&date=today&time=-1";
 		}
 		else if (key.equals("addToBasket"))
 		{
@@ -72,6 +72,4 @@ public class SnappFoodAPIBuilder extends SystemAPIBuilder{
 		}
 		return null;
 	}
-
-
 }

@@ -1,17 +1,17 @@
 package Search.Controller;
+import javafx.util.Pair;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.json.simple.parser.JSONParser;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.awt.*;
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -19,6 +19,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class SnappFoodCtrl extends SystemCtrl
@@ -71,39 +72,34 @@ public class SnappFoodCtrl extends SystemCtrl
 
 	public JSONArray getMenu(String api, String code)
 	{
-		JSONArray menu = new JSONArray();
-		String foods_class = "kk-grid-item ";
-		String check_exist = "btn-product-finished";
-		String price_class = "kk-price-wrapper kk-primary";
-		Document document = getRestaurantMenuHtml(code, api);
-		Elements foodDivs = document.getElementsByClass(foods_class);
-		JSONArray food;
-		JSONObject detail;
-		for (Element el : foodDivs)
+		JSONArray menu;
+		JSONObject json = getRestaurantMenuJson(code, api);
+		json = (JSONObject) json.get("param");
+		menu = (JSONArray) json.get("menu");
+		HashMap<String, Pair<String, String>> totalFoods = new HashMap<>();
+		for (Object item : menu)
 		{
-			String checkForItemExistence = el.getElementsByClass(check_exist).text();
-			if (checkForItemExistence.equals(""))
+			JSONObject category = (JSONObject) item;
+			JSONArray foods = (JSONArray) category.get("products");
+			for (Object item1 : foods)
 			{
-				Element h4 = el.getElementsByTag("h4").first();
-				Element foodNameSpan = h4.getElementsByTag("span").first();
-				Element priceDiv = el.getElementsByClass(price_class).first();
-				Element priceSpan = priceDiv.getElementsByTag("span").first();
-				String data[] = el.getElementsByTag("a").attr("data-hashtags").split("::");
-				food = new JSONArray();
-				detail = new JSONObject();
-				detail.put(foodNameSpan.text(), "productId:" + data[1]);
-				food.add(detail);
-				detail = new JSONObject();
-				detail.put(foodNameSpan.text(), "price: " + priceSpan.text());
-				food.add(detail);
-				menu.add(food);
+				JSONObject food = (JSONObject) item1;
+				totalFoods.put(food.get("id").toString(), new Pair<String, String>(food.get("title").toString(), food.get("price").toString()));
 			}
 		}
-		Desktop d = Desktop.getDesktop();
-		try {
-			d.browse(new URI("https://snappfood.ir/order/checkout/vendor/"+code));
-		} catch (IOException | URISyntaxException e2) {
-			e2.printStackTrace();
+		JSONObject detail;
+		JSONArray food;
+		menu = new JSONArray();
+		for (String id : totalFoods.keySet())
+		{
+			food = new JSONArray();
+			detail = new JSONObject();
+			detail.put(totalFoods.get(id).getKey(), "productId:" + id);
+			food.add(detail);
+			detail = new JSONObject();
+			detail.put(totalFoods.get(id).getKey(), "price: " + totalFoods.get(id).getValue());
+			food.add(detail);
+			menu.add(food);
 		}
 		return menu;
 	}
@@ -158,40 +154,39 @@ public class SnappFoodCtrl extends SystemCtrl
 		}
 	}
 
-	private Document getRestaurantMenuHtml(String restaurantCode, String API)
+	private JSONObject getRestaurantMenuJson(String restaurantCode, String API)
 	{
 		try
 		{
+			Map<String, String> cookies = Jsoup.connect("https://snappfood.ir/restaurant/menu/" + restaurantCode).ignoreContentType(true).execute().cookies();
+			String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36";
 			URL obj = new URL(API);
 			HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
-			con.setRequestMethod("POST");
-			String urlParameters = "code=" + restaurantCode;
-			con.setDoOutput(true);
-			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-			wr.writeBytes(urlParameters);
-			wr.flush();
-			wr.close();
+			con.setRequestProperty("User-Agent", USER_AGENT);
+			String cookie = cookies.toString().substring(1, cookies.toString().length() - 1);
+			con.setRequestProperty("Cookie", cookie);
+			con.setRequestMethod("GET");
+			con.connect();
 			int responseCode = con.getResponseCode();
-			JSONObject json = new JSONObject();
-			JSONParser parser = new JSONParser();
 			if (responseCode == 200)
 			{
-				BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
+				BufferedReader in = new BufferedReader(
+						new InputStreamReader(con.getInputStream()));
 				String inputLine;
 				StringBuffer response = new StringBuffer();
-				String total = "";
-				while ((inputLine = in.readLine()) != null)
-				{
+
+				while ((inputLine = in.readLine()) != null) {
 					response.append(inputLine);
 				}
 				in.close();
-				json = (JSONObject) parser.parse(response.toString());
-				String html = (String) json.get("html");
-				return Jsoup.parse(html);
+				JSONParser parser = new JSONParser();
+				JSONObject json = (JSONObject) parser.parse(response.toString());
+				return json;
 			}
 			else
 			{
-				System.out.println("response code is : " + responseCode);
+				System.out.println("in method getMenuJson");
+				System.out.println(responseCode);
 				return null;
 			}
 		}
@@ -202,7 +197,7 @@ public class SnappFoodCtrl extends SystemCtrl
 		}
 	}
 
-	public boolean addToBasket(String vendorCode,	ArrayList<String> productIds, String API)
+	public void addToBasket(String vendorCode,	ArrayList<String> productIds, String API)
 	{
 		Map<String, String> cookies = login("09368714321", "13771999");
 		String operationMode = "1";
@@ -222,7 +217,6 @@ public class SnappFoodCtrl extends SystemCtrl
 			catch (IOException e)
 			{
 				e.printStackTrace();
-				return false;
 			}
 		}
 		String productId = "-1";
@@ -242,16 +236,8 @@ public class SnappFoodCtrl extends SystemCtrl
 			catch (IOException e)
 			{
 				e.printStackTrace();
-				return false;
 			}
 		}
-//		Desktop d = Desktop.getDesktop();
-//		try {
-//			d.browse(new URI("https://snappfood.ir/order/checkout/vendor/"+vendorCode));
-//		} catch (IOException | URISyntaxException e2) {
-//			e2.printStackTrace();
-//		}
-		return true;
 	}
 
 	private Map<String, String> login(String userName, String password)
