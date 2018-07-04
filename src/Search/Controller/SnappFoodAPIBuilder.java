@@ -24,6 +24,10 @@ public class SnappFoodAPIBuilder extends SystemAPIBuilder{
 		{
 			return getURL(key);
 		}
+		else if (key.equals("snappFoodUserAddresses"))
+		{
+			return getURL(key);
+		}
 		return null;
 	}
 
@@ -69,6 +73,10 @@ public class SnappFoodAPIBuilder extends SystemAPIBuilder{
 		else if(key.equals("addToBasket"))
 		{
 			return URLModel.addingToBasket_link;
+		}
+		else if (key.equals("snappFoodUserAddresses"))
+		{
+			return URLModel.snappFood_user_addresses_api;
 		}
 		return null;
 	}

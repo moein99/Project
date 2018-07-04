@@ -12,6 +12,7 @@ import org.jsoup.select.Elements;
 import javax.net.ssl.HttpsURLConnection;
 import java.awt.*;
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -100,6 +101,13 @@ public class SnappFoodCtrl extends SystemCtrl
 			detail.put(totalFoods.get(id).getKey(), "price: " + totalFoods.get(id).getValue());
 			food.add(detail);
 			menu.add(food);
+		}
+		Desktop d = Desktop.getDesktop();
+		try {
+			d.browse(new URI("https://snappfood.ir/restaurant/"+code));
+
+		} catch (IOException | URISyntaxException e2) {
+			e2.printStackTrace();
 		}
 		return menu;
 	}
@@ -200,43 +208,77 @@ public class SnappFoodCtrl extends SystemCtrl
 	public void addToBasket(String vendorCode,	ArrayList<String> productIds, String API)
 	{
 		Map<String, String> cookies = login("09368714321", "13771999");
-		String operationMode = "1";
-		String is_checkout = "true";
-		String payment_type = "online";
-		for(String productId:productIds)
+		String linearCookie = "";
+		for (String cookie : cookies.keySet())
 		{
-			try
+			linearCookie += cookie + "=" + cookies.get(cookie) + "; ";
+		}
+		linearCookie = linearCookie.substring(0, linearCookie.length() - 2);
+		JSONArray addresses = getAddresses(linearCookie);
+		String addressId = ((JSONObject)addresses.get(0)).get("id").toString(); // for now just first address!
+		String operationMode = "1";
+		String payment_type = "online";
+		URL obj;
+		HttpURLConnection con;
+		String urlParameters, proId;
+		try
+		{
+			for (int i = 0; i < productIds.size() + 1; i++)
 			{
-				Connection.Response execut = Jsoup.connect(API).ignoreContentType(true).
-						data("vendor_code",vendorCode).
-						data("operation_mode",operationMode).
-						data("product_id",productId).
-						data("last_target_id",productId).method(Connection.Method.POST).cookies(cookies)
-						.execute();
-			}
-			catch (IOException e)
-			{
-				e.printStackTrace();
+				obj = new URL(API);
+				con = (HttpsURLConnection) obj.openConnection();
+				con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36");
+				con.setRequestMethod("POST");
+				con.setRequestProperty("Cookie", linearCookie);
+				if (i == productIds.size())
+				{
+					operationMode = "5";
+					proId = "-1";
+					urlParameters = "vendor_code=" + vendorCode;
+					urlParameters += "&operation_mode=" + operationMode;
+					urlParameters += "&product_id=" + proId;
+					urlParameters += "&address_id=" + addressId;
+					urlParameters += "&is_checkout=true";
+					urlParameters += "&payment_type=" + payment_type;
+				}
+				else
+				{
+					proId = productIds.get(i);
+					urlParameters = "vendor_code=" + vendorCode;
+					urlParameters += "&operation_mode=" + operationMode;
+					urlParameters += "&product_id=" + proId;
+					urlParameters += "&last_target_id=" + proId;
+					urlParameters += "&date=today";
+					urlParameters += "&time=-1";
+				}
+				con.setDoOutput(true);
+				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+				wr.writeBytes(urlParameters);
+				wr.flush();
+				wr.close();
+				int responseCode = con.getResponseCode();
+				if (responseCode == 200)
+				{
+					BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
+					String inputLine = in.readLine();
+					if (!(inputLine.charAt(11) == '1'))
+					{
+						System.out.println("Couldn't add " + proId);
+						return;
+					}
+					String headerName=null;
+						for (int j = 1; (headerName = con.getHeaderFieldKey(j)) != null; j++) {
+							if (headerName.equals("Set-Cookie")) {
+								linearCookie = con.getHeaderField(j);
+								break;
+							}
+						}
+				}
 			}
 		}
-		String productId = "-1";
-		operationMode = "5";
-		for(int i = 0; i < productIds.size(); i++)
+		catch (Exception e)
 		{
-			try
-			{
-				Connection.Response execute = Jsoup.connect(API).ignoreContentType(true).
-						data("is_checkout",is_checkout).
-						data("operation_mode", operationMode).
-						data("payment_type", payment_type).
-						data("product_id", productId).
-						data("vendor_code", vendorCode).method(Connection.Method.POST).cookies(cookies)
-						.execute();
-			}
-			catch (IOException e)
-			{
-				e.printStackTrace();
-			}
+			e.printStackTrace();
 		}
 	}
 
@@ -280,5 +322,39 @@ public class SnappFoodCtrl extends SystemCtrl
 			return null;
 		}
 
+	}
+
+	private JSONArray getAddresses(String loginCookie)
+	{
+		setAPI("snappFoodUserAddresses", "");
+		try
+		{
+			URL obj = new URL(api);
+			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+			con.setRequestMethod("GET");
+			con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36");
+			con.setRequestProperty("Cookie", loginCookie);
+			int responseCode = con.getResponseCode();
+			if (responseCode == 200)
+			{
+				BufferedReader in = new BufferedReader(
+						new InputStreamReader(con.getInputStream()));
+				String inputLine;
+				StringBuffer response = new StringBuffer();
+
+				while ((inputLine = in.readLine()) != null) {
+					response.append(inputLine);
+				}
+				in.close();
+				JSONParser parser = new JSONParser();
+				JSONArray addresses = (JSONArray) parser.parse(response.toString());
+				return addresses;
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
