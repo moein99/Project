@@ -3,15 +3,11 @@ package Search.Model;
 public class URLModel
 {
     public static String menu_link = "https://snappfood.ir/restaurant/menu/new-menu/load";
-    public static String restaurants_link = "https://snapp-food.com/restaurant/city/tehran/area/";
-    public static String restaurants_class = "kk-pp-title";
-    public static String foods_class = "kk-grid-item ";
-    public static String price_class = "kk-price-wrapper kk-primary";
     public static String login_link = "https://snappfood.ir/auth/login_check";
     public static String snappFood_user_addresses_api = "https://snappfood.ir/customer/address/get";
     public static String location_link = "https://snappfood.ir/restaurant/location";
-    public static String baseUrl = "https://snappfood.ir";
     public static String address_link = "https://snappfood.ir/restaurant/city/";
     public static String addingToBasket_link = "https://snappfood.ir/order/cart/update/";
-    public static String bank_payment="https://snappfood.ir/order/handle/vendor/";
+    public static String changal_getRegion_api = "https://changal.com/api/location/regions/";
+    public static String changal_getRestaurants_api = "https://changal.com/api/v2/restaurants";
 }

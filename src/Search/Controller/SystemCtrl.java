@@ -9,5 +9,4 @@ public abstract class SystemCtrl {
     public abstract JSONArray getRestuarants(String API);
     public abstract String getAPI();
     public abstract JSONArray getMenu(String API, String code);
-    public abstract void addToBasket(String vendorCode, ArrayList<String> productIds, String API);
 }

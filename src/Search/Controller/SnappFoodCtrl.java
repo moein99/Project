@@ -218,18 +218,12 @@ public class SnappFoodCtrl extends SystemCtrl
 		String addressId = ((JSONObject)addresses.get(0)).get("id").toString(); // for now just first address!
 		String operationMode = "1";
 		String payment_type = "online";
-		URL obj;
-		HttpURLConnection con;
 		String urlParameters, proId;
 		try
 		{
+			Requester requester = new Requester();
 			for (int i = 0; i < productIds.size() + 1; i++)
 			{
-				obj = new URL(API);
-				con = (HttpsURLConnection) obj.openConnection();
-				con.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36");
-				con.setRequestMethod("POST");
-				con.setRequestProperty("Cookie", linearCookie);
 				if (i == productIds.size())
 				{
 					operationMode = "5";
@@ -251,29 +245,13 @@ public class SnappFoodCtrl extends SystemCtrl
 					urlParameters += "&date=today";
 					urlParameters += "&time=-1";
 				}
-				con.setDoOutput(true);
-				DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-				wr.writeBytes(urlParameters);
-				wr.flush();
-				wr.close();
-				int responseCode = con.getResponseCode();
-				if (responseCode == 200)
+				CookieAndResponse cookieAndResponse = requester.sendPostRequest(API, urlParameters, linearCookie);
+				if (!(cookieAndResponse.stringBuffer.charAt(11) == '1'))
 				{
-					BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
-					String inputLine = in.readLine();
-					if (!(inputLine.charAt(11) == '1'))
-					{
-						System.out.println("Couldn't add " + proId);
-						return;
-					}
-					String headerName=null;
-						for (int j = 1; (headerName = con.getHeaderFieldKey(j)) != null; j++) {
-							if (headerName.equals("Set-Cookie")) {
-								linearCookie = con.getHeaderField(j);
-								break;
-							}
-						}
+					System.out.println("Couldn't add " + proId);
+					return;
 				}
+				linearCookie = cookieAndResponse.cookie.get(0);
 			}
 		}
 		catch (Exception e)
