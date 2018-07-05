@@ -54,7 +54,9 @@ public class ChangalCtrl extends SystemCtrl
     @Override
     public JSONArray getMenu(String API, String code)
     {
-        return null;
+        JSONObject temporary = getJson(requester.sendGetRequest(API.replace("RESTAURANT_NAME", code)).toString());
+        JSONArray object = (JSONArray) temporary.get("food");
+        return object;
     }
 
     public void addToBasket(String regionId, String restaurantId, JSONArray foods, String API)
@@ -64,7 +66,9 @@ public class ChangalCtrl extends SystemCtrl
 
     public JSONObject login(String username, String password)
     {
-        return null;
+        setAPI("login", username + "&" + password);
+        String wholeResponse = requester.sendGetRequest(api).toString();
+        return getJson(wholeResponse);
     }
 
     private JSONObject getJson(String html)

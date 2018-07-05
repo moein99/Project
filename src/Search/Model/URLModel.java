@@ -10,4 +10,6 @@ public class URLModel
     public static String addingToBasket_link = "https://snappfood.ir/order/cart/update/";
     public static String changal_getRegion_api = "https://changal.com/api/location/regions/";
     public static String changal_getRestaurants_api = "https://changal.com/api/v2/restaurants";
+    public static String changal_getMenu_api = "https://changal.com/api/restaurants/RESTAURANT_NAME/food/";
+    public static String changal_login_api = "https://changal.com/api/rest-auth/login/?password=PASSWORD&username=USERNAME";
 }

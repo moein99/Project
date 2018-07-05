@@ -17,7 +17,7 @@ public class ChangalAPIBuilder extends SystemAPIBuilder
         }
         else if (key.equals("getMenu"))
         {
-            return null;
+            return getURL(key);
         }
         else if (key.equals("addToBasket"))
         {
@@ -25,7 +25,8 @@ public class ChangalAPIBuilder extends SystemAPIBuilder
         }
         else if (key.equals("login"))
         {
-            return null;
+            String[] userAndPass = data.split("&");
+            return getURL(key).replace("USERNAME", userAndPass[0]).replace("PASSWORD", userAndPass[1]);
         }
         return null;
     }
@@ -42,7 +43,7 @@ public class ChangalAPIBuilder extends SystemAPIBuilder
         }
         else if (key.equals("getMenu"))
         {
-            return null;
+            return URLModel.changal_getMenu_api;
         }
         else if (key.equals("addToBasket"))
         {
@@ -50,7 +51,7 @@ public class ChangalAPIBuilder extends SystemAPIBuilder
         }
         else if (key.equals("login"))
         {
-            return null;
+            return URLModel.changal_login_api;
         }
         return null;
     }
