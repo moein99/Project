@@ -21,7 +21,7 @@ public class ChangalAPIBuilder extends SystemAPIBuilder
         }
         else if (key.equals("addToBasket"))
         {
-            return null;
+            return getURL(key);
         }
         else if (key.equals("login"))
         {
@@ -47,7 +47,7 @@ public class ChangalAPIBuilder extends SystemAPIBuilder
         }
         else if (key.equals("addToBasket"))
         {
-            return null;
+            return URLModel.changal_addToBasket_api;
         }
         else if (key.equals("login"))
         {
