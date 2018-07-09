@@ -95,7 +95,7 @@
                                         else {
                                             System.out.println("login");
                                     %>
-                                    <li class="nav-item">
+                                    <li class="nav-item" style="color: white">
                                         <%out.println(request.getSession().getAttribute("login"));%>
                                     </li>
                                     <%}%>
@@ -128,13 +128,11 @@
                         </div>
                         <div class="row d-flex justify-content-center">
                             <div class="col-md-10">
-                                <form class="form-wrap mt-4" action="listing.jsp">
+                                <form class="form-wrap mt-4 submit" action="listing.jsp">
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <input   type="text" placeholder="تهران" class="btn-group2"><span class="glyphicon glyphicon-map-marker"></span>
-                                        <input   type="text" placeholder="انتخاب حدودی منطقه" class="btn-group2">
-                                        <input   type="text" placeholder="انتخاب حدود قیمت" class="btn-group1">
+                                        <input   type="text" placeholder="تهران" class="btn-group"><span class="glyphicon glyphicon-map-marker"></span>
                                         <input type="text" name="t1" id="t1" style="display: none;">
-                                        <input onclick="validaty()" type="submit" value="بگرد!  " class="btn-form"><i class="pe-7s-angle-left"></i></button>
+                                        <input onclick="validaty()" type="button" value="بگرد!  " class="btn-form"><i class="pe-7s-angle-left"></i></button>
                                     </div>
                                     <div>
                                         <p class="borderi"style="color: #ffffff;font-size: 25px">میتونی از روی نقشه هم انتخاب کنی
@@ -159,7 +157,7 @@
                     alert("select location");
                 }
                 else{
-                    document.getElementById("mapform").submit();
+                    document.getElementsByClassName("submit")[0].submit();
                 }
             }
             function initAutocomplete() {
@@ -172,6 +170,7 @@
                 });
                 var input = document.getElementById('pac-input');
                 var searchBox = new google.maps.places.SearchBox(input);
+                document.getElementsByClassName("")
                 map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
                 map.addListener('bounds_changed', function() {

@@ -84,7 +84,7 @@
                                 else {
                                     System.out.println("login");
                                 %>
-                                <li class="nav-item dropdown">
+                                <li class="nav-item dropdown" style="color: white">
                                     <%out.println(request.getSession().getAttribute("login"));%>
                                 </li>
                                 <%}%>
@@ -98,17 +98,6 @@
                         <!--//END HEADER -->
     <!--============================= DETAIL =============================-->
     <section>
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
-                <form class="form-wrap mt-4 border">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <input   type="text" placeholder="تهران" class="btn-group2"><span class="glyphicon glyphicon-map-marker"></span>
-                        <input   type="text" placeholder=" حدود منطقه" class="btn-group2">
-                        <input   type="text" placeholder=" حدود قیمت" class="btn-group1">
-                        <button  type="submit" class="btn-form"><span class=" search-icon"></span>بگرد!<i class="pe-7s-angle-left"></i></button>
-                    </div>
-                </form></div>
-        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 responsive-wrap">
@@ -118,7 +107,6 @@
                     <div class="row detail-filter-wrap">
                         <div class="col-md-4 featured-responsive">
                             <div class="detail-filter-text">
-                                <p>نتیجه 34 رستوران</p>
                             </div>
                         </div>
                         <div class="col-md-8 featured-responsive">

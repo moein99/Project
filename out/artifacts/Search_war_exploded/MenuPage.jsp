@@ -1,6 +1,10 @@
 <%@ page import="Search.Controller.SnappFoodCtrl" %>
 <%@ page import="org.json.simple.JSONObject" %>
 <%@ page import="org.json.simple.JSONArray" %>
+<%@ page import="java.awt.*" %>
+<%@ page import="java.net.URI" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.net.URISyntaxException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String key = "getMenu";
@@ -10,6 +14,13 @@
     JSONArray data = snappController.getMenu(snappController.getAPI(), venCode);
     String proId;
     JSONObject food;
+    Desktop d = Desktop.getDesktop();
+    try {
+        d.browse(new URI("https://snappfood.ir/restaurant/"+venCode));
+
+    } catch (IOException | URISyntaxException e2) {
+        e2.printStackTrace();
+    }
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,18 +95,30 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-menu"></span>
                     </button>
-
-                    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                    <div class="collapse navbar-collapse justify-content" id="navbarNavDropdown">
                         <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link fonti " href="signUp.html">عضویت</a>
+                            <%
+                                String userName= (String) request.getSession().getAttribute("login");
+                                if (userName==null || userName=="") {
+                                    System.out.println("not login");
+
+                            %>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    صفحه اصلی
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link fonti" href="login.jsp">ورود</a>
+                            <%
+                            }
+                            else {
+                                System.out.println("login");
+                            %>
+                            <li class="nav-item dropdown" style="color: white">
+                                <%out.println(request.getSession().getAttribute("login"));%>
                             </li>
+                            <%}%>
                         </ul>
                     </div>
-
                 </nav>
             </div>
         </div>
@@ -119,16 +142,14 @@
                     %>
                     <div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
                         <div class="featured-place-wrap">
-                            <a href="#">
                                 <img src="static/images/main.jpg" class="img-fluid" alt="#">
                                 <div class="featured-title-box">
-                                    <h6 onclick="add(<%out.println(proId);%>)" class="name"><%out.println(name);%></h6>
+                                    <h6  class="name"><%out.println(name);%></h6>
                                     <p><span style="font-size: 20px"><%out.println(price);%></span>تومان </p>
                                     </ul>
                                     <br>
-                                    <button class="btn btn-outline-primary" >میخوامش !</button>
+                                    <button onclick="add(<%out.println(proId);%>)" class="btn btn-outline-primary" >میخوامش !</button>
                                 </div>
-                            </a>
                         </div>
                     </div>
                     <%}%>
@@ -136,27 +157,25 @@
             </div>
             <div class="col-md-2 responsive-wrap">
                 <div class="row light-bg detail-options-wrap">
-                    <a onclick="finish()">
-                        <div class=" col-sm-12 col-lg-12 col-xl-12 featured-responsive"><center><img style="width: 100px;height: 100px;padding-right: 10px" src="images/basket.png" class="img-fluid" alt="#">
+                        <div class=" col-sm-12 col-lg-12 col-xl-12 featured-responsive"><center><img style="width: 100px;height: 100px;padding-right: 10px" src="static/images/basket.png" class="img-fluid" alt="#">
                         </center></div>
                         <center>
                             <div class="col-sm-12 col-lg-12 col-xl-12 featured-responsive">
-                                <form id="SubmitForm" action="response.jsp">
+                                <center><form id="SubmitForm" action="response.jsp">
                                     <input type="text" id="data" name ="data" style="display: none">
                                     <input type="text" id="code" name="code" value="<%out.println(venCode);%>" style="display: none">
                                 </form>
-                                <center><p class="borderi rounded" >سبد خرید</p></center>
+                                    <button class="borderi rounded" id="basket" value="<%if (request.getSession().getAttribute("login")==null) out.print("false"); else out.print("true"); ;%>"onclick="finish()" >سبد خرید</button></center>
                             </div>
                             <div class="col-sm-12 col-lg-12 col-xl-12 featured-responsive">
                                 <div class="featured-place-wrap">
                                     <div class="featured-title-box">
-                                        <h6 style="color:red">پیتزا <span style="color: #0b0b0b;font-size: 20px">10000 </span>تومان </h6>
                                         <p></p>
                                     </div>
                                 </div>
                             </div>
                         </center>
-                    </a></div>
+                </div>
             </div>
         </div>
     </div>
@@ -198,6 +217,7 @@
     }
     function finish() {
         document.getElementById("data").value=json;
+        if (document.getElementById("basket").value=="true")
         document.getElementById("SubmitForm").submit();
     }
 </script>

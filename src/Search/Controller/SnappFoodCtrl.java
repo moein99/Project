@@ -99,13 +99,6 @@ public class SnappFoodCtrl extends SystemCtrl
 		{
 			menu.add(totalFoods.get(foodName));
 		}
-		Desktop d = Desktop.getDesktop();
-		try {
-			d.browse(new URI("https://snappfood.ir/restaurant/"+code));
-
-		} catch (IOException | URISyntaxException e2) {
-			e2.printStackTrace();
-		}
 		return menu;
 	}
 

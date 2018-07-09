@@ -11,51 +11,13 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war/Search_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war/Search_war.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/MenuPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/MenuPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/SnappFoodCtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/SnappFoodCtrl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/View/SubmitPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/View/SubmitPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/listing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/listing.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Search/Search/Controller/SnappFoodCtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search/Search/Controller/SnappFoodCtrl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Search/Search/View/SubmitPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search/Search/View/SubmitPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Search/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search/Controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Search/View/SubmitPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search/View/SubmitPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/MenuPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/MenuPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/MenuPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/MenuPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/2.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/250x250.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/250x250.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/back1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/back1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/back1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/back1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/back2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/back2.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/back3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/back3.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/basket.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/basket.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/customer-img1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/customer-img1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/customer-img2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/customer-img2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/featured1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/featured1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/featured2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/featured2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/featured3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/featured3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/featured4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/featured4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/find-place1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/find-place1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/find-place2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/find-place2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/find-place3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/find-place3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/find-place4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/find-place4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/find-place5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/find-place5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/follow-img.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/follow-img.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/ghaza1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/ghaza1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/ghaza2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/ghaza2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/ghaza3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/ghaza3.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/login.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/main.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/main.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/map.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/map.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/res.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/res.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/reserve-slide1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/reserve-slide1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/reserve-slide2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/reserve-slide2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/reserve-slide3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/reserve-slide3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/ress.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/ress.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/review-img1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/review-img1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/review-img2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/review-img2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/review-img3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/review-img3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/slider.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/slider.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/listing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/listing.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/response.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/response.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,8 +35,8 @@
       <file leaf-file-name="SnappFoodAPIBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Search/Model/SnappFoodAPIBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="39" column="38" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="38" />
+            <state relative-caret-position="96">
+              <caret line="41" column="42" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#SnappFoodAPIBuilder#0;class#SnappFoodAPIBuilder#0" />
@@ -87,7 +49,7 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-930">
+            <state relative-caret-position="-435">
               <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
             </state>
           </provider>
@@ -96,8 +58,18 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="100" column="41" selection-start-line="92" selection-start-column="36" selection-end-line="100" selection-end-column="41" />
+            <state>
+              <caret line="147" column="18" lean-forward="true" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#p#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,17 +77,11 @@
       <file leaf-file-name="listing.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/listing.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="63" column="70" lean-forward="true" selection-start-line="63" selection-start-column="70" selection-end-line="63" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuPage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/MenuPage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="140" column="25" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
+            <state relative-caret-position="186">
+              <caret line="108" column="60" selection-start-line="108" selection-start-column="60" selection-end-line="108" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,12 +89,20 @@
       <file leaf-file-name="MenuPage.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/MenuPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="157" column="33" lean-forward="true" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
+            <state relative-caret-position="292">
+              <caret line="218" column="51" selection-start-line="218" selection-start-column="51" selection-end-line="218" selection-end-column="51" />
               <folding>
-                <element signature="e#5964#5985#0#HTML" expanded="true" />
-                <element signature="e#6094#6115#0#HTML" expanded="true" />
+                <element signature="e#4366#4386#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="response.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/response.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -142,32 +116,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SnappFoodCtrl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="53" column="64" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Search/Controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="14" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserMangaer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Search/Model/UserMangaer.java">
+      <file leaf-file-name="SnappFoodCtrl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-261">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state relative-caret-position="-1284">
+              <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -201,7 +163,6 @@
         <option value="$PROJECT_DIR$/web/one.jsp" />
         <option value="$PROJECT_DIR$/src/Search/View/SearchPage.java" />
         <option value="$PROJECT_DIR$/temp.html" />
-        <option value="$PROJECT_DIR$/web/response.jsp" />
         <option value="$PROJECT_DIR$/../risotto/index.html" />
         <option value="$PROJECT_DIR$/../risotto/blog.html" />
         <option value="$PROJECT_DIR$/../risotto/blog.jsp" />
@@ -227,12 +188,13 @@
         <option value="$PROJECT_DIR$/src/Search/Controller/LoginManger.java" />
         <option value="$PROJECT_DIR$/src/Search/Model/UserMangaer.java" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/Search/View/SubmitPage.java" />
         <option value="$PROJECT_DIR$/src/Search/Controller/LoginController.java" />
         <option value="$PROJECT_DIR$/web/MenuPage.html" />
-        <option value="$PROJECT_DIR$/web/listing.jsp" />
         <option value="$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/listing.jsp" />
+        <option value="$PROJECT_DIR$/web/response.jsp" />
         <option value="$PROJECT_DIR$/web/MenuPage.jsp" />
       </list>
     </option>
@@ -264,7 +226,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,8 +285,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -709,6 +671,7 @@
       <workItem from="1531053202232" duration="5817000" />
       <workItem from="1531059968720" duration="1958000" />
       <workItem from="1531137173263" duration="3175000" />
+      <workItem from="1531177319894" duration="3096000" />
     </task>
     <task id="LOCAL-00001" summary="add submit page">
       <created>1527526097516</created>
@@ -735,70 +698,44 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167443000" />
+    <option name="totallyTimeSpent" value="171913000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Application Servers" order="12" weight="0.32991803" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="8" />
-      <window_info id="Designer" order="3" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39846322" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32889345" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info id="Image Layers" order="5" />
-      <window_info anchor="bottom" id="Java Enterprise" order="9" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32930845" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4180328" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49615806" visible="true" weight="0.19838275" />
-      <window_info id="Web" order="6" sideWeight="0.50384194" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41822174" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49615806" visible="true" weight="0.19838275" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="Nl-Palette" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32930845" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Application Servers" order="12" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="9" />
-      <window_info id="Web" order="6" sideWeight="0.50384194" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Database" order="5" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Java Enterprise" order="9" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Properties" order="4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39846322" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32930845" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32930845" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4180328" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49615806" visible="true" weight="0.19838275" />
+      <window_info id="Web" order="6" sideWeight="0.50384194" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info id="Designer" order="3" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Properties" order="4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32991803" />
@@ -824,7 +761,6 @@
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32930845" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32821077" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49615806" visible="true" weight="0.19838275" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -833,6 +769,7 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32821077" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39846322" />
     </layout-to-restore>
   </component>
@@ -882,20 +819,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/main.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/owl.carousel.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3168" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/main.js" />
+    <entry file="file://$PROJECT_DIR$/web/js/owl.carousel.min.js" />
+    <entry file="file://$PROJECT_DIR$/web/js/bootstrap.min.js" />
+    <entry file="file://$PROJECT_DIR$/web/js/jquery.min.js" />
     <entry file="file://$PROJECT_DIR$/src/Search/Controller/SystemCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -916,13 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/response.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -947,16 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
           <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#1800#1801#0" expanded="true" />
-            <element signature="e#1817#1818#0" expanded="true" />
-            <element signature="method#getMenu#0;class#SnappFoodCtrl#0" />
-            <element signature="method#getRestaurantsHtml#0;class#SnappFoodCtrl#0" />
-            <element signature="method#getRestaurantMenuJson#0;class#SnappFoodCtrl#0" />
-            <element signature="method#addToBasket#0;class#SnappFoodCtrl#0" />
-            <element signature="method#login#0;class#SnappFoodCtrl#0" />
-            <element signature="method#getAddresses#0;class#SnappFoodCtrl#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -981,13 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/HomePage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="75" column="40" lean-forward="true" selection-start-line="75" selection-start-column="40" selection-end-line="78" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -996,13 +899,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Search/Model/UserManager.java" />
-    <entry file="file://$PROJECT_DIR$/web/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.html" />
     <entry file="file://$PROJECT_DIR$/../login/ProfilerUI-master/src/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1034,20 +931,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+    <entry file="file://$PROJECT_DIR$/web/HomePage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="100" column="41" selection-start-line="92" selection-start-column="36" selection-end-line="100" selection-end-column="41" />
+        <state relative-caret-position="1125">
+          <caret line="75" column="40" selection-start-line="75" selection-start-column="40" selection-end-line="78" selection-end-column="91" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Search/Controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/Search/Model/SnappFoodAPIBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        <state relative-caret-position="96">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#SnappFoodAPIBuilder#0;class#SnappFoodAPIBuilder#0" />
+            <element signature="method#createAddressUrl#0;class#SnappFoodAPIBuilder#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1058,53 +964,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+    <entry file="file://$PROJECT_DIR$/src/Search/Controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-930">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/MenuPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="140" column="25" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Search/Model/SnappFoodAPIBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="39" column="38" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#SnappFoodAPIBuilder#0;class#SnappFoodAPIBuilder#0" />
-            <element signature="method#createAddressUrl#0;class#SnappFoodAPIBuilder#0" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="14" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="53" column="64" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
+        <state relative-caret-position="-1284">
+          <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/MenuPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="140" column="25" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/listing.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="63" column="70" lean-forward="true" selection-start-line="63" selection-start-column="70" selection-end-line="63" selection-end-column="70" />
+        <state relative-caret-position="186">
+          <caret line="108" column="60" selection-start-line="108" selection-start-column="60" selection-end-line="108" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="147" column="18" lean-forward="true" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#0;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/response.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/MenuPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="157" column="33" lean-forward="true" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
+        <state relative-caret-position="292">
+          <caret line="218" column="51" selection-start-line="218" selection-start-column="51" selection-end-line="218" selection-end-column="51" />
           <folding>
-            <element signature="e#5964#5985#0#HTML" expanded="true" />
-            <element signature="e#6094#6115#0#HTML" expanded="true" />
+            <element signature="e#4366#4386#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
