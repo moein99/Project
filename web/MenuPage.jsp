@@ -71,7 +71,7 @@
             </ul>
             <!-- /menu nav -->
             <%
-                String key = "menuAPI";
+                String key = "getMenu";
                 String venCode = request.getParameter("code");
                 SnappFoodCtrl snappController = new SnappFoodCtrl();
                 snappController.setAPI(key, venCode);

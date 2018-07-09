@@ -1,4 +1,5 @@
 package Search.Controller;
+import Search.Model.SnappFoodAPIBuilder;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -7,7 +8,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import javax.net.ssl.HttpsURLConnection;
 import java.awt.*;
 import java.io.BufferedReader;
@@ -39,11 +39,9 @@ public class SnappFoodCtrl extends SystemCtrl
 		int pageNumber = 0;
 		Document doc = getRestaurantsHtml(API, pageNumber, resClass);
 		JSONObject restuarant;
-		while (doc != null)
-		{
+		while (doc != null) {
 			Elements restaurantDivs = doc.getElementsByClass(resClass);
-			for (Element el : restaurantDivs)
-			{
+			for (Element el : restaurantDivs) {
 				Element a = el.getElementsByTag("a").first();
 				String restaurantName = a.text();
 				String restaurantCode = getRestaurantCode(a.attr("href"), indexOfRestaurantCode);
@@ -54,7 +52,6 @@ public class SnappFoodCtrl extends SystemCtrl
 			pageNumber++;
 			doc = getRestaurantsHtml(API, pageNumber, resClass);
 		}
-
 		return restaurants;
 	}
 

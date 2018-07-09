@@ -1,5 +1,6 @@
 package Search.Controller;
 
+import Search.Model.SystemAPIBuilder;
 import Search.Model.URLModel;
 
 public class ChangalAPIBuilder extends SystemAPIBuilder

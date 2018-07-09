@@ -158,7 +158,7 @@
                         <%
                             String loc = request.getParameter("t1");
                             loc = "lat="+loc.split(",")[0].substring(1)+"&long="+loc.split(",")[1].substring(0,loc.split(",")[1].length()-1);
-                            String key = "restaurantAPI";
+                            String key = "getRestaurants";
                             SnappFoodCtrl snappController = new SnappFoodCtrl();
                             snappController.setAPI(key, loc);
                             JSONArray data = snappController.getRestuarants(snappController.getAPI());

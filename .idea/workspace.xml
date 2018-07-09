@@ -7,14 +7,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9261818-5aec-469b-9f33-54350a0276ce" name="Default" comment="Fix responsePage">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/HttpClient.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jdbc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_11.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/lib/dms.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/lib/mysql-connector.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/lib/ojdbc7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/lib/ojdbc7dms.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Search/Model/SnappFoodAPIBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Search.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Search.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war/Search_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war/Search_war.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/MenuPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/MenuPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/ChangalAPIBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/ChangalAPIBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/DBMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/SnappFoodAPIBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/SnappFoodCtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/SnappFoodCtrl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/SystemAPIBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/listing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/listing.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Search/Search/Controller/ChangalAPIBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search/Search/Controller/ChangalAPIBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Search/Search/Controller/DBMethods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Search/Search/Controller/SnappFoodAPIBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Search/Search/Controller/SnappFoodCtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search/Search/Controller/SnappFoodCtrl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Search/Search/Controller/SystemAPIBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search/Controller/ChangalAPIBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search/Controller/ChangalAPIBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search/Controller/DBMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search/Model/DBMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search/Controller/SnappFoodAPIBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search/Controller/SystemAPIBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search/Model/SystemAPIBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/MenuPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/MenuPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/listing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/listing.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,12 +47,15 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="URLModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Search/Model/URLModel.java">
+    <leaf>
+      <file leaf-file-name="SnappFoodAPIBuilder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Search/Model/SnappFoodAPIBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="107" selection-start-line="12" selection-start-column="107" selection-end-line="12" selection-end-column="107" />
+            <state relative-caret-position="290">
+              <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,55 +63,47 @@
       <file leaf-file-name="SnappFoodCtrl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="194" column="5" selection-start-line="194" selection-start-column="5" selection-end-line="194" selection-end-column="5" />
+            <state relative-caret-position="435">
+              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
               <folding>
-                <element signature="method#getMenu#0;class#SnappFoodCtrl#0" />
-                <element signature="method#getRestaurantsHtml#0;class#SnappFoodCtrl#0" />
-                <element signature="method#getRestaurantMenuJson#0;class#SnappFoodCtrl#0" />
-                <element signature="method#addToBasket#0;class#SnappFoodCtrl#0" />
-                <element signature="method#login#0;class#SnappFoodCtrl#0" />
-                <element signature="method#getAddresses#0;class#SnappFoodCtrl#0" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChangalCtrl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Search/Controller/ChangalCtrl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="SystemAPIBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Search/Controller/SystemAPIBuilder.java">
+        <entry file="file://$PROJECT_DIR$/src/Search/Model/SystemAPIBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+            <state relative-caret-position="45">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SnappFoodAPIBuilder.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Search/Controller/SnappFoodAPIBuilder.java">
+      <file leaf-file-name="DBMethods.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Search/Model/DBMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="79" column="9" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-              <folding>
-                <element signature="method#createAddressUrl#0;class#SnappFoodAPIBuilder#0" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchPage.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/SearchPage.jsp">
+      <file leaf-file-name="URLModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Search/Model/URLModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1455">
-              <caret line="97" column="211" selection-start-line="97" selection-start-column="160" selection-end-line="97" selection-end-column="211" />
+            <state relative-caret-position="90">
+              <caret line="6" column="98" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuPage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/MenuPage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -97,39 +111,8 @@
       <file leaf-file-name="listing.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/listing.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="251" column="13" selection-start-line="251" selection-start-column="13" selection-end-line="251" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="104" column="82" selection-start-line="104" selection-start-column="82" selection-end-line="104" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Requester.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Search/Controller/Requester.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1590">
-              <caret line="167" column="1" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
-              <folding>
-                <element signature="method#sendPostRequest#0;class#Requester#0" />
-                <element signature="class#CookieAndResponse#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChangalAPIBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Search/Controller/ChangalAPIBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+            <state relative-caret-position="495">
+              <caret line="180" column="73" lean-forward="true" selection-start-line="180" selection-start-column="73" selection-end-line="180" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -171,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/Search/Controller/SystemCtrl.java" />
-        <option value="$PROJECT_DIR$/src/Search/Controller/SnappFoodAPIBuilder.java" />
         <option value="$PROJECT_DIR$/src/Search/Controller/aaaaa.java" />
         <option value="$PROJECT_DIR$/src/Search/Controller/Test.java" />
         <option value="$PROJECT_DIR$/src/Search/Model/URLModel.java" />
@@ -181,11 +163,14 @@
         <option value="$PROJECT_DIR$/src/Search/Controller/ChangalCtrl.java" />
         <option value="$PROJECT_DIR$/src/Search/Controller/Requester.java" />
         <option value="$PROJECT_DIR$/src/Search/Controller/test.java" />
-        <option value="$PROJECT_DIR$/web/MenuPage.jsp" />
-        <option value="$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java" />
         <option value="$PROJECT_DIR$/web/HomePage.jsp" />
         <option value="$PROJECT_DIR$/web/SearchPage.jsp" />
         <option value="$PROJECT_DIR$/web/listing.jsp" />
+        <option value="$PROJECT_DIR$/web/MenuPage.jsp" />
+        <option value="$PROJECT_DIR$/src/Search/Model/DBMethods.java" />
+        <option value="$PROJECT_DIR$/src/Search/Controller/SnappFoodAPIBuilder.java" />
+        <option value="$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java" />
+        <option value="$PROJECT_DIR$/src/Search/Model/SnappFoodAPIBuilder.java" />
       </list>
     </option>
   </component>
@@ -205,11 +190,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="922" />
-    <option name="height" value="976" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="784" />
+    <option name="y" value="265" />
+    <option name="width" value="920" />
+    <option name="height" value="940" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -244,20 +229,14 @@
             <path>
               <item name="tahlil" type="b2602c69:ProjectViewProjectNode" />
               <item name="tahlil" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Search" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tahlil" type="b2602c69:ProjectViewProjectNode" />
               <item name="tahlil" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tahlil" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tahlil" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -284,6 +263,9 @@
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Search.Controller" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Search.Model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -313,7 +295,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Search.Controller.*" />
+          <option name="PATTERN" value="Search.Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -327,7 +309,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Search.Controller.*" />
+          <option name="PATTERN" value="Search.Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -343,7 +325,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Search.Controller.*" />
+          <option name="PATTERN" value="Search.Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -642,7 +624,7 @@
       <workItem from="1531018183416" duration="1871000" />
       <workItem from="1531053202232" duration="5817000" />
       <workItem from="1531059968720" duration="1958000" />
-      <workItem from="1531137173263" duration="1537000" />
+      <workItem from="1531137173263" duration="3175000" />
     </task>
     <task id="LOCAL-00001" summary="add submit page">
       <created>1527526097516</created>
@@ -662,45 +644,70 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155062000" />
+    <option name="totallyTimeSpent" value="156144000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="7" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info id="Image Layers" order="5" />
-      <window_info anchor="bottom" id="Java Enterprise" order="9" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Application Servers" order="12" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32930845" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41822174" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info id="Capture Tool" order="8" />
-      <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49615806" visible="true" weight="0.19838275" />
-      <window_info id="Web" order="6" sideWeight="0.50384194" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" weight="0.32991803" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39846322" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32930845" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="UI Designer" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" weight="0.32991803" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32991803" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959569" />
+      <window_info id="Web" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" order="12" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41822174" />
+      <window_info id="Image Layers" order="5" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Properties" order="4" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32930845" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49615806" visible="true" weight="0.19838275" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32930845" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Properties" order="4" />
+      <window_info id="Web" order="6" sideWeight="0.50384194" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32821077" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39846322" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Application Servers" order="12" />
@@ -751,14 +758,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Search/Controller/SnappFoodAPIBuilder.java</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="95" />
     </breakpoint-manager>
   </component>
@@ -767,14 +766,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/two.html" />
-    <entry file="file://$PROJECT_DIR$/web/SearchPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -878,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Search/Model/URLModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="107" selection-start-line="12" selection-start-column="107" selection-end-line="12" selection-end-column="107" />
+        <state relative-caret-position="105">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -897,48 +888,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/MenuPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2398">
-          <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Search/Controller/Requester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1590">
           <caret line="167" column="1" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
-          <folding>
-            <element signature="method#sendPostRequest#0;class#Requester#0" />
-            <element signature="class#CookieAndResponse#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Search/Controller/test.java" />
     <entry file="file://$PROJECT_DIR$/src/Search/Controller/example.java" />
-    <entry file="file://$PROJECT_DIR$/src/Search/Controller/DBMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding>
-            <element signature="method#addUser#0;class#DBMethods#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/HomePage.jsp" />
     <entry file="file://$PROJECT_DIR$/web/SearchPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1455">
           <caret line="97" column="211" selection-start-line="97" selection-start-column="160" selection-end-line="97" selection-end-column="211" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/listing.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="251" column="13" selection-start-line="251" selection-start-column="13" selection-end-line="251" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -949,11 +912,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java">
+    <entry file="file://$PROJECT_DIR$/src/Search/Controller/ChangalCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="194" column="5" selection-start-line="194" selection-start-column="5" selection-end-line="194" selection-end-column="5" />
+        <state relative-caret-position="429">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
+            <element signature="e#1800#1801#0" expanded="true" />
+            <element signature="e#1817#1818#0" expanded="true" />
             <element signature="method#getMenu#0;class#SnappFoodCtrl#0" />
             <element signature="method#getRestaurantsHtml#0;class#SnappFoodCtrl#0" />
             <element signature="method#getRestaurantMenuJson#0;class#SnappFoodCtrl#0" />
@@ -964,26 +929,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Search/Controller/ChangalCtrl.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="498">
+          <caret line="1098" column="10" lean-forward="true" selection-start-line="1098" selection-start-column="10" selection-end-line="1098" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Search/Controller/SystemAPIBuilder.java">
+    <entry file="file://$PROJECT_DIR$/web/listing.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        <state relative-caret-position="495">
+          <caret line="180" column="73" lean-forward="true" selection-start-line="180" selection-start-column="73" selection-end-line="180" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Search/Controller/SnappFoodAPIBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/Search/Model/URLModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="79" column="9" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
+        <state relative-caret-position="90">
+          <caret line="6" column="98" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/MenuPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Search/Model/DBMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Search/Model/SystemAPIBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
           <folding>
-            <element signature="method#createAddressUrl#0;class#SnappFoodAPIBuilder#0" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Search/Model/SnappFoodAPIBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
