@@ -60,8 +60,8 @@
       <file leaf-file-name="SearchPage.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/SearchPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="100" column="24" lean-forward="true" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="29" />
+            <state relative-caret-position="195">
+              <caret line="97" column="211" selection-start-line="97" selection-start-column="160" selection-end-line="97" selection-end-column="211" />
             </state>
           </provider>
         </entry>
@@ -69,8 +69,8 @@
       <file leaf-file-name="listing.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/listing.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="203" column="29" selection-start-line="203" selection-start-column="29" selection-end-line="203" selection-end-column="29" />
+            <state relative-caret-position="2760">
+              <caret line="184" column="51" lean-forward="true" selection-start-line="184" selection-start-column="51" selection-end-line="184" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -603,7 +603,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152138000" />
+    <option name="totallyTimeSpent" value="152957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -946,15 +946,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/SearchPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="100" column="24" lean-forward="true" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="29" />
+        <state relative-caret-position="195">
+          <caret line="97" column="211" selection-start-line="97" selection-start-column="160" selection-end-line="97" selection-end-column="211" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/listing.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="203" column="29" selection-start-line="203" selection-start-column="29" selection-end-line="203" selection-end-column="29" />
+        <state relative-caret-position="2760">
+          <caret line="184" column="51" lean-forward="true" selection-start-line="184" selection-start-column="51" selection-end-line="184" selection-end-column="82" />
         </state>
       </provider>
     </entry>

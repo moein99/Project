@@ -172,11 +172,11 @@
                                 code =jsonObject.values().toString();%>
                         <div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
                             <div class="featured-place-wrap">
-                                <a href="detail.html">
+                                <a href="MenuPage.jsp?code=<%out.println(code.substring(1,code.length()-1));%>">
                                     <img src="images/featured1.jpg" class="img-fluid" alt="#">
                                     <span class="featured-rating-orange ">6.5</span>
                                     <div class="featured-title-box">
-                                        <h6>Burger &amp; Lobster</h6>
+                                        <h6><%out.println(name.substring(1,name.length()-1));%></h6>
                                         <p>Restaurant </p> <span>• </span>
                                         <p>3 Reviews</p> <span> • </span>
                                         <p><span>$$$</span>$$</p>
