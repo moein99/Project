@@ -41,22 +41,13 @@ public class SnappFoodCtrl extends SystemCtrl
 		JSONObject restuarant;
 		while (doc != null) {
 			Elements restaurantDivs = doc.getElementsByClass(resClass);
-			Elements images = doc.getElementsByClass("vendor-logo-no-shadow");
-			int index = 0;
 			for (Element el : restaurantDivs) {
 				Element a = el.getElementsByTag("a").first();
 				String restaurantName = a.text();
 				String restaurantCode = getRestaurantCode(a.attr("href"), indexOfRestaurantCode);
-				String style = images.get(index).attr("style");
-				style = style.substring(style.indexOf("(") + 2, style.indexOf(")") - 1);
 				restuarant = new JSONObject();
 				restuarant.put(restaurantName, restaurantCode);
-				restuarant.put("restaurantImage", style);
-				style = images.get(index + 1).attr("style");
-				style = style.substring(style.indexOf("(") + 2, style.indexOf(")") - 1);
-				restuarant.put("backGroundImage", style);
 				restaurants.add(restuarant);
-				index += 2;
 			}
 			pageNumber++;
 			doc = getRestaurantsHtml(API, pageNumber, resClass);
