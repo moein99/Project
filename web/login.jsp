@@ -16,24 +16,24 @@
     <!-- Page Title -->
     <title>ورود</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
     <!-- Simple line Icon -->
-    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="static/css/simple-line-icons.css">
     <!-- Themify Icon -->
-    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="static/css/themify-icons.css">
     <!-- Hover Effects -->
-    <link rel="stylesheet" href="css/set1.css">
+    <link rel="stylesheet" href="static/css/set1.css">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <style>
     @font-face
     {
-        font-family:'p30';font-weight:400;src:url(fonts/Shabnam.eot);src:url(fonts/Shabnam.eot?#iefix)
-    format("embedded-opentype"),url(fonts/Shabnam.woff) format("woff"),
-    url(Shabnam.ttf) format("truetype")}
+        font-family:'p30';font-weight:400;src:url(static/fonts/Shabnam.eot);src:url(static/fonts/Shabnam.eot?#iefix)
+    format("embedded-opentype"),url(static/fonts/Shabnam.woff) format("woff"),
+    url(static/fonts/Shabnam.ttf) format("truetype")}
     p,h1,h2,h3,h4,h5,h6,a,ul,div,tr,td,input,body,span{font-family:"p30"; direction: rtl !important
     }
     .borderi {
@@ -50,7 +50,7 @@
     }
     .slider
     {
-        background:url(images/1.jpeg)!important;
+        background:url(static/images/1.jpeg)!important;
     }
     input:hover
     {
@@ -93,9 +93,9 @@
                             <div class="col-md-12">
                                 <div class="slider-content_wrap borderi">
                                     <h1 style="direction: rtl ;padding-bottom: 25px"> حساب کاربری</h1>
-                                    <form action="HomePage.html">
-                                        <input   type="text" placeholder="نام کاربری" class="btn-group2">
-                                        <input   type="password" placeholder="رمز عبور" class="btn-group2">
+                                    <form action="/login" method="post">
+                                        <input   type="text" name="user" placeholder="نام کاربری" class="btn-group2">
+                                        <input   type="password" name="pass" placeholder="رمز عبور" class="btn-group2">
                                         <span   style="padding-bottom: 20px">
 
                                             <input    type="submit" value="ورود" class="btn-form">

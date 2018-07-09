@@ -18,24 +18,24 @@
     <!-- Page Title -->
     <title>Home | Chaka</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
     <!-- Simple line Icon -->
-    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="static/css/simple-line-icons.css">
     <!-- Themify Icon -->
-    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="static/css/themify-icons.css">
     <!-- Hover Effects -->
-    <link rel="stylesheet" href="css/set1.css">
+    <link rel="stylesheet" href="static/css/set1.css">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <style>
     @font-face
     {
-        font-family:'p30';font-weight:400;src:url(fonts/Shabnam.eot);src:url(fonts/Shabnam.eot?#iefix)
-    format("embedded-opentype"),url(fonts/Shabnam.woff) format("woff"),
-    url(Shabnam.ttf) format("truetype")}
+        font-family:'p30';font-weight:400;src:url(static/fonts/Shabnam.eot);src:url(static/fonts/Shabnam.eot?#iefix)
+    format("embedded-opentype"),url(static/fonts/Shabnam.woff) format("woff"),
+    url(static/fonts/Shabnam.ttf) format("truetype")}
     p,h1,h2,h3,h4,h5,h6,a,ul,div,tr,td,input,body,span{font-family:"p30"; direction: rtl !important
     }
     .borderi {
@@ -78,12 +78,27 @@
 
                             <div class="collapse navbar-collapse " id="navbarNavDropdown">
                                 <ul class="navbar-nav">
+                                    <%
+                                        String userName= (String) request.getSession().getAttribute("login");
+                                        if (userName==null || userName=="") {
+                                            System.out.println("not login");
+
+                                    %>
                                     <li class="nav-item active">
                                         <a class="nav-link fonti " href="signUp.html">عضویت</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link fonti" href="login.jsp">ورود</a>
                                     </li>
+                                    <%
+                                        }
+                                        else {
+                                            System.out.println("login");
+                                    %>
+                                    <li class="nav-item">
+                                        <%out.println(request.getSession().getAttribute("login"));%>
+                                    </li>
+                                    <%}%>
                                 </ul>
                             </div>
 

@@ -20,24 +20,24 @@
     <!-- Page Title -->
     <title>Listing &amp; Directory Website Template</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
     <!-- Simple line Icon -->
-    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="static/css/simple-line-icons.css">
     <!-- Themify Icon -->
-    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="static/css/themify-icons.css">
     <!-- Hover Effects -->
-    <link rel="stylesheet" href="css/set1.css">
+    <link rel="stylesheet" href="static/css/set1.css">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <style>
     @font-face
     {
-        font-family:'p30';font-weight:400;src:url(fonts/Shabnam.eot);src:url(fonts/Shabnam.eot?#iefix)
-    format("embedded-opentype"),url(fonts/Shabnam.woff) format("woff"),
-    url(Shabnam.ttf) format("truetype")}
+        font-family:'p30';font-weight:400;src:url(static/fonts/Shabnam.eot);src:url(static/fonts/Shabnam.eot?#iefix)
+    format("embedded-opentype"),url(static/fonts/Shabnam.woff) format("woff"),
+    url(static/fonts/Shabnam.ttf) format("truetype")}
     p,h1,h2,h3,h4,h5,h6,a,ul,div,tr,td,input,body,span{font-family:"p30"; direction: rtl !important
     }
     .borderi {
@@ -169,14 +169,14 @@
                                 jsonObject = (JSONObject) data.get(i);
                                 byte ptext[] = jsonObject.keySet().toString().getBytes();
                                 String name = new String(ptext, "UTF-8");
-                                code =jsonObject.values().toString();%>
+                                ;%>
                         <div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
                             <div class="featured-place-wrap">
-                                <a href="MenuPage.jsp?code=<%out.println(code.substring(1,code.length()-1));%>">
-                                    <img src="images/featured1.jpg" class="img-fluid" alt="#">
+                                <a href="MenuPage.jsp?code=<%out.println(jsonObject.get("restaurantCode"));%>">
+                                    <img src="static/images/featured<%out.println(i%3+1);%>.jpg" class="img-fluid" alt="#">
                                     <span class="featured-rating-orange ">6.5</span>
-                                    <div class="featured-title-box">
-                                        <h6><%out.println(name.substring(1,name.length()-1));%></h6>
+                                    <div class="featured-title-box">ظ
+                                        <h6><%out.println(jsonObject.get("restaurantName"));%></h6>
                                         <p>Restaurant </p> <span>• </span>
                                         <p>3 Reviews</p> <span> • </span>
                                         <p><span>$$$</span>$$</p>
