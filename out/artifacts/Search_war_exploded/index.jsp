@@ -34,8 +34,8 @@
     @font-face
     {
         font-family:'p30';font-weight:400;src:url(fonts/Shabnam.eot);src:url(fonts/Shabnam.eot?#iefix)
-        format("embedded-opentype"),url(fonts/Shabnam.woff) format("woff"),
-        url(Shabnam.ttf) format("truetype")}
+    format("embedded-opentype"),url(fonts/Shabnam.woff) format("woff"),
+    url(Shabnam.ttf) format("truetype")}
     p,h1,h2,h3,h4,h5,h6,a,ul,div,tr,td,input,body,span{font-family:"p30"; direction: rtl !important
     }
     .borderi {
@@ -49,6 +49,17 @@
     {
 
         width: 100% !important;
+    }
+    input:hover
+    {
+
+        color: white;
+        box-shadow: 0 0 0 2px orange;
+        background-color: #7e5774;
+    }
+    a:hover
+    {
+        color: #1e7e34!important;
     }
 </style>
 
@@ -68,10 +79,10 @@
                             <div class="collapse navbar-collapse " id="navbarNavDropdown">
                                 <ul class="navbar-nav">
                                     <li class="nav-item active">
-                                        <a class="nav-link fonti " href="#">عضویت</a>
+                                        <a class="nav-link fonti " href="signUp.html">عضویت</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fonti" href="#">ورود</a>
+                                        <a class="nav-link fonti" href="login.jsp">ورود</a>
                                     </li>
                                 </ul>
                             </div>
