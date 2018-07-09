@@ -219,7 +219,7 @@ p {
   border-top: none;
   border-right: none;
   border-bottom: none;
-  border-left: 1px solid #ccc; }
+  border-left: 5px solid #46ccff; }
   @media (max-width: 576px) {
     .btn-group2 {
       width: 100%;
