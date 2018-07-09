@@ -68,11 +68,26 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content" id="navbarNavDropdown">
                             <ul class="navbar-nav">
+                                <%
+                                    String userName= (String) request.getSession().getAttribute("login");
+                                    if (userName==null || userName=="") {
+                                        System.out.println("not login");
+
+                                %>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         صفحه اصلی
                                     </a>
                                 </li>
+                                <%
+                                }
+                                else {
+                                    System.out.println("login");
+                                %>
+                                <li class="nav-item dropdown">
+                                    <%out.println(request.getSession().getAttribute("login"));%>
+                                </li>
+                                <%}%>
                             </ul>
                         </div>
                     </nav>

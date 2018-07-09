@@ -2,170 +2,194 @@
 <%@ page import="org.json.simple.JSONObject" %>
 <%@ page import="org.json.simple.JSONArray" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en"><head><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}
-</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
-</style>
+<%
+    String key = "getMenu";
+    String venCode = request.getParameter("code");
+    SnappFoodCtrl snappController = new SnappFoodCtrl();
+    snappController.setAPI(key, venCode);
+    JSONArray data = snappController.getMenu(snappController.getAPI(), venCode);
+    String proId;
+    JSONObject food;
+%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <title>Menu</title>
-
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700%7CCabin:400%7CDancing+Script" rel="stylesheet">
-
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!-- Owl Carousel -->
-    <link type="text/css" rel="stylesheet" href="css/owl.carousel.css">
-    <link type="text/css" rel="stylesheet" href="css/owl.theme.default.css">
-
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-    <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/33/1/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/33/1/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/33/1/map.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/33/1/marker.js"></script><style type="text/css">.gm-style {
-        font: 400 11px Roboto, Arial, sans-serif;
-        text-decoration: none;
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Colorlib">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="#">
+    <!-- Page Title -->
+    <title>نام رستوران</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+    <!-- Simple line Icon -->
+    <link rel="stylesheet" href="static/css/simple-line-icons.css">
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="static/css/themify-icons.css">
+    <!-- Hover Effects -->
+    <link rel="stylesheet" href="static/css/set1.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<style>
+    @font-face
+    {
+        font-family:'p30';font-weight:400;src:url(static/fonts/Shabnam.eot);src:url(static/fonts/Shabnam.eot?#iefix)
+    format("embedded-opentype"),url(static/fonts/Shabnam.woff) format("woff"),
+    url(static/fonts/Shabnam.ttf) format("truetype")}
+    p,h1,h2,h3,h4,h5,h6,a,ul,div,tr,td,input,body,span{font-family:"p30"; direction: rtl !important
     }
-    .gm-style img { max-width: none; }
-    .hover { cursor: pointer; }
-    </style><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/33/1/onion.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/33/1/controls.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/33/1/stats.js"></script></head>
+    .borderi {
+
+        padding: 10px;
+        background-color: rgba(70, 204, 255, 0.5) !important;
+
+
+    }
+    .colori
+    {
+
+        width: 100% !important;
+    }
+    input:hover
+    {
+
+        color: white;
+        box-shadow: 0 0 0 2px orange;
+        background-color: #7e5774;
+    }
+    a:hover
+    {
+        color: #1e7e34!important;
+    }
+</style>
+
+
 <body>
-
-<!-- Menu -->
-<div id="menu" class="section">
-
-    <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url(./img/background01.jpg)"></div>
-    <!-- /Backgound Image -->
-
-    <!-- container -->
-    <div class="container">
-
-        <!-- row -->
+<!--============================= HEADER =============================-->
+<div class="dark-bg sticky-top">
+    <div class="container-fluid">
         <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.jsp">چاکا</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-menu"></span>
+                    </button>
 
-            <div class="section-header text-center">
-                <h4 class="sub-title">Discover</h4>
-                <h2 class="title white-text">Our Menu</h2>
-            </div>
-
-            <!-- menu nav -->
-            <ul class="menu-nav">
-                <li class="active"><a data-toggle="tab" href="#menu1">Foods</a></li>
-
-
-
-            </ul>
-            <!-- /menu nav -->
-            <%
-                String key = "getMenu";
-                String venCode = request.getParameter("code");
-                SnappFoodCtrl snappController = new SnappFoodCtrl();
-                snappController.setAPI(key, venCode);
-                JSONArray data = snappController.getMenu(snappController.getAPI(), venCode);
-                String proId;
-                JSONObject food;
-                int half =data.size()/2;
-            %>
-            <!-- menu content -->
-            <div id="menu-content" class="tab-content">
-
-                <!-- menu1 -->
-                <div id="menu1" class="tab-pane fade in active">
-                    <div class="col-md-6">
-                        <%for (int i = 0; i < half; i++)
-                        {
-                            food = (JSONObject) data.get(i);
-                            String name = food.get("title").toString();
-                            proId = food.get("id").toString();
-                            String price = food.get("price").toString();
-                            %>
-                        <!-- single dish -->
-                        <div class="single-dish hover">
-                            <div  class="single-dish-heading">
-                                <h4 onclick="add(<%out.println(proId);%>)" class="name"><%out.println(name);%></h4>
-                                <h4 class="price"><%out.println(price);%></h4>
-                            </div>
-                        </div>
-                        <%}%>
+                    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link fonti " href="signUp.html">عضویت</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fonti" href="login.jsp">ورود</a>
+                            </li>
+                        </ul>
                     </div>
 
-                </div>
-                <div id="menu2" class="tab-pane fade in active">
-                    <div class="col-md-6">
-                        <%for (int i = half; i < data.size(); i++)
-                        {
-                            food = (JSONObject) data.get(i);
-                            String name = food.get("title").toString();
-                            proId = food.get("id").toString();
-                            String price = food.get("price").toString();
-                        %>
-                        <!-- single dish -->
-                        <div class="single-dish hover">
-                            <div onclick="add(<%out.println(proId);%>)" class="single-dish-heading">
-                                <h4 class="name"><%out.println(name);%></h4>
-                                <h4 class="price"><%out.println(price);%></h4>
-                            </div>
-                        </div>
-                        <%}%>
-                    </div>
-
-                </div>
-                <!-- /menu1 -->
-                <form id="SubmitForm" action="response.jsp">
-                    <input type="text" id="data" name ="data" style="display: none">
-                    <input type="text" id="code" name="code" value="<%out.println(venCode);%>" style="display: none">
-                    <input type="button" class="main-button" value="Done" onclick="finish()" style="margin-top: 26px; margin-left: 500px;" >
-                </form>
+                </nav>
             </div>
-            <!-- /menu content -->
-
         </div>
-        <!-- /row -->
-
     </div>
-    <!-- /container -->
-
 </div>
-
-<!-- Footer -->
-<footer id="footer">
-
-    <!-- container -->
-    <div class="container">
-
-        <!-- row -->
+<!--//END HEADER -->
+<!--============================= DETAIL =============================-->
+<section style="background-color: #e8e8e8">
+    <div class="container-fluid">
         <div class="row">
-
+            <div class="col-md-1 responsive-wrap"></div>
+            <div class="col-md-8 responsive-wrap">
+                <div class="row light-bg detail-options-wrap">
+                    <%for (int i = 0; i < data.size(); i++)
+                    {
+                        food = (JSONObject) data.get(i);
+                        System.out.println(food);
+                        String name = food.get("title").toString();
+                        proId = food.get("id").toString();
+                        String price = food.get("price").toString();
+                    %>
+                    <div class="col-sm-6 col-lg-12 col-xl-6 featured-responsive">
+                        <div class="featured-place-wrap">
+                            <a href="#">
+                                <img src="static/images/main.jpg" class="img-fluid" alt="#">
+                                <div class="featured-title-box">
+                                    <h6 onclick="add(<%out.println(proId);%>)" class="name"><%out.println(name);%></h6>
+                                    <p><span style="font-size: 20px"><%out.println(price);%></span>تومان </p>
+                                    </ul>
+                                    <br>
+                                    <button class="btn btn-outline-primary" >میخوامش !</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+            </div>
+            <div class="col-md-2 responsive-wrap">
+                <div class="row light-bg detail-options-wrap">
+                    <a onclick="finish()">
+                        <div class=" col-sm-12 col-lg-12 col-xl-12 featured-responsive"><center><img style="width: 100px;height: 100px;padding-right: 10px" src="images/basket.png" class="img-fluid" alt="#">
+                        </center></div>
+                        <center>
+                            <div class="col-sm-12 col-lg-12 col-xl-12 featured-responsive">
+                                <form id="SubmitForm" action="response.jsp">
+                                    <input type="text" id="data" name ="data" style="display: none">
+                                    <input type="text" id="code" name="code" value="<%out.println(venCode);%>" style="display: none">
+                                </form>
+                                <center><p class="borderi rounded" >سبد خرید</p></center>
+                            </div>
+                            <div class="col-sm-12 col-lg-12 col-xl-12 featured-responsive">
+                                <div class="featured-place-wrap">
+                                    <div class="featured-title-box">
+                                        <h6 style="color:red">پیتزا <span style="color: #0b0b0b;font-size: 20px">10000 </span>تومان </h6>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
+                    </a></div>
+            </div>
         </div>
-        <!-- /row -->
-
     </div>
-    <!-- /container -->
+</section>
+<!--//END DETAIL -->
+<!--============================= FOOTER =============================-->
+<footer class="main-block dark-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <p >
+                        <span style="font-size: 25px">چاکا</span>
 
+                        <br>
+                        سامانه انتخاب بهترین و به صرفه ترین غذا از بهترین سرویس
+
+                    <ul>
+                        <li><a href="#"><span class="ti-facebook"></span></a></li>
+                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                        <li><a href="#"><span class="ti-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
-
-<div id="preloader" style="display: none;">
-    <div class="preloader">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
-
+<!--//END FOOTER -->
+<!-- jQuery, Bootstrap JS. -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script>
     var json ="";
     function add(str){
@@ -177,13 +201,8 @@
         document.getElementById("SubmitForm").submit();
     }
 </script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-<script type="text/javascript" src="js/google-map.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
 
+</body>
 
-
-</body></html>
+</html>
+<%--<input type="button" class="main-button" value="Done" onclick="finish()" style="margin-top: 26px; margin-left: 500px;" >--%>

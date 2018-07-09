@@ -16,6 +16,7 @@ public class LoginController extends HttpServlet{
             UserMangaer userManager = new UserMangaer();
             if (userManager.login(userName, password)) {
                 request.getSession().setAttribute("login", userName);
+                request.getSession().setAttribute("pass", password);
                 response.sendRedirect("index.jsp");
             }
             else{

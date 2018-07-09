@@ -14,6 +14,6 @@ public class SubmitPage
     {
         SnappFoodCtrl snappController = new SnappFoodCtrl();
         snappController.setAPI(key, null);
-        snappController.addToBasket(venCode, proIds, snappController.getAPI());
+        //snappController.addToBasket(venCode, proIds, snappController.getAPI());
     }
 }
