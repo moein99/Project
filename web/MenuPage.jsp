@@ -77,7 +77,7 @@
                 snappController.setAPI(key, venCode);
                 JSONArray data = snappController.getMenu(snappController.getAPI(), venCode);
                 String proId;
-                JSONArray jsonArray;
+                JSONObject food;
                 int half =data.size()/2;
             %>
             <!-- menu content -->
@@ -88,16 +88,16 @@
                     <div class="col-md-6">
                         <%for (int i = 0; i < half; i++)
                         {
-                            jsonArray = (JSONArray) data.get(i);
-                            JSONObject first = (JSONObject)jsonArray.get(0);
-                            proId = first.values().toString().split(":")[1];
-                            proId= proId.substring(0,proId.length()-1);
-                            JSONObject second = (JSONObject)jsonArray.get(1);%>
+                            food = (JSONObject) data.get(i);
+                            String name = food.get("title").toString();
+                            proId = food.get("id").toString();
+                            String price = food.get("price").toString();
+                            %>
                         <!-- single dish -->
                         <div class="single-dish hover">
                             <div  class="single-dish-heading">
-                                <h4 onclick="add(<%out.println(proId);%>)" class="name"><%out.println(first.keySet().toString().substring(1, first.keySet().toString().length() - 1));%></h4>
-                                <h4 class="price"><%out.println(second.values().toString().substring(1, second.values().toString().length() - 1));%></h4>
+                                <h4 onclick="add(<%out.println(proId);%>)" class="name"><%out.println(name);%></h4>
+                                <h4 class="price"><%out.println(price);%></h4>
                             </div>
                         </div>
                         <%}%>
@@ -108,16 +108,16 @@
                     <div class="col-md-6">
                         <%for (int i = half; i < data.size(); i++)
                         {
-                            jsonArray = (JSONArray) data.get(i);
-                            JSONObject first = (JSONObject)jsonArray.get(0);
-                            proId = first.values().toString().split(":")[1];
-                            proId= proId.substring(0,proId.length()-1);
-                            JSONObject second = (JSONObject)jsonArray.get(1);%>
+                            food = (JSONObject) data.get(i);
+                            String name = food.get("title").toString();
+                            proId = food.get("id").toString();
+                            String price = food.get("price").toString();
+                        %>
                         <!-- single dish -->
                         <div class="single-dish hover">
                             <div onclick="add(<%out.println(proId);%>)" class="single-dish-heading">
-                                <h4 class="name"><%out.println(first.keySet().toString().substring(1, first.keySet().toString().length() - 1));%></h4>
-                                <h4 class="price"><%out.println(second.values().toString().substring(1, second.values().toString().length() - 1));%></h4>
+                                <h4 class="name"><%out.println(name);%></h4>
+                                <h4 class="price"><%out.println(price);%></h4>
                             </div>
                         </div>
                         <%}%>

@@ -1,5 +1,7 @@
 package Search.Controller;
 
+import org.apache.http.impl.client.BasicCookieStore;
+import org.apache.http.impl.cookie.BasicClientCookie;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -9,7 +11,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.net.CookieStore;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ChangalCtrl extends SystemCtrl
 {
@@ -61,14 +65,36 @@ public class ChangalCtrl extends SystemCtrl
 
     public void addToBasket(String regionId, String restaurantId, JSONArray foods, String API)
     {
-        return;
+        JsonObjectAndCookie userDetailsAndCookie = login("09368714321", "moeincarnal77");
+        JSONObject userDetails = userDetailsAndCookie.json;
+        String temp;
+        BasicCookieStore cookieStore = new BasicCookieStore();
+        BasicClientCookie cookie;
+        boolean flag = true;
+        for (String rawCookie : userDetailsAndCookie.cookies)
+        {
+            temp = rawCookie.split(";")[0];
+            String[] nameVal = temp.split("=");
+            cookie = new BasicClientCookie(nameVal[0], nameVal[1]);
+            cookie.setPath("/");
+            cookie.setDomain(".changal.com");
+            // maybe it will be needed to set date for cookie!
+            cookieStore.addCookie(cookie);
+        }
+        JSONObject items = new JSONObject();
+        items.put("items", foods);
+        items.put("region_id", regionId);
+        items.put("restaurant_id", restaurantId);
+        //requester.sendPostWithJson(API, items, cookieStore);
     }
 
-    public JSONObject login(String username, String password)
+    public JsonObjectAndCookie login(String username, String password)
     {
         setAPI("login", username + "&" + password);
-        String wholeResponse = requester.sendGetRequest(api).toString();
-        return getJson(wholeResponse);
+        CookieAndResponse cookieAndResponse = requester.sendGetRequestC(api);
+        JSONObject userDetails = getJson(cookieAndResponse.stringBuffer.toString());
+        JsonObjectAndCookie jsonObjectAndCookie = new JsonObjectAndCookie(cookieAndResponse.cookie, userDetails);
+        return jsonObjectAndCookie;
     }
 
     private JSONObject getJson(String html)
@@ -89,5 +115,16 @@ public class ChangalCtrl extends SystemCtrl
         }
         return temporary;
     }
+}
 
+
+class JsonObjectAndCookie
+{
+    ArrayList<String> cookies;
+    JSONObject json;
+    JsonObjectAndCookie(ArrayList<String> cookies, JSONObject json)
+    {
+        this.cookies = cookies;
+        this.json = json;
+    }
 }

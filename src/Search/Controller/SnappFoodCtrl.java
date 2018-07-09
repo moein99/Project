@@ -1,5 +1,4 @@
 package Search.Controller;
-import javafx.util.Pair;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,7 +11,6 @@ import org.jsoup.select.Elements;
 import javax.net.ssl.HttpsURLConnection;
 import java.awt.*;
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -77,7 +75,7 @@ public class SnappFoodCtrl extends SystemCtrl
 		JSONObject json = getRestaurantMenuJson(code, api);
 		json = (JSONObject) json.get("param");
 		menu = (JSONArray) json.get("menu");
-		HashMap<String, Pair<String, String>> totalFoods = new HashMap<>();
+		HashMap<String, JSONObject> totalFoods = new HashMap<>();
 		for (Object item : menu)
 		{
 			JSONObject category = (JSONObject) item;
@@ -85,22 +83,13 @@ public class SnappFoodCtrl extends SystemCtrl
 			for (Object item1 : foods)
 			{
 				JSONObject food = (JSONObject) item1;
-				totalFoods.put(food.get("id").toString(), new Pair<String, String>(food.get("title").toString(), food.get("price").toString()));
+				totalFoods.put(food.get("title").toString(), food);
 			}
 		}
-		JSONObject detail;
-		JSONArray food;
 		menu = new JSONArray();
-		for (String id : totalFoods.keySet())
+		for (String foodName : totalFoods.keySet())
 		{
-			food = new JSONArray();
-			detail = new JSONObject();
-			detail.put(totalFoods.get(id).getKey(), "productId:" + id);
-			food.add(detail);
-			detail = new JSONObject();
-			detail.put(totalFoods.get(id).getKey(), "price: " + totalFoods.get(id).getValue());
-			food.add(detail);
-			menu.add(food);
+			menu.add(totalFoods.get(foodName));
 		}
 		Desktop d = Desktop.getDesktop();
 		try {
