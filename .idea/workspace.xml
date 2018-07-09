@@ -7,17 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9261818-5aec-469b-9f33-54350a0276ce" name="Default" comment="Fix responsePage">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war/Search_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war/Search_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/SnappFoodCtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/WEB-INF/classes/Search/Controller/SnappFoodCtrl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Search_war_exploded/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Search/Search/Controller/SnappFoodCtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search/Search/Controller/SnappFoodCtrl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/HomePage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/listing.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/listing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/listing.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,8 +60,8 @@
       <file leaf-file-name="SearchPage.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/SearchPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1275">
-              <caret selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="240">
+              <caret line="100" column="24" lean-forward="true" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -79,8 +69,8 @@
       <file leaf-file-name="listing.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/listing.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="65" lean-forward="true" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+            <state relative-caret-position="255">
+              <caret line="203" column="29" selection-start-line="203" selection-start-column="29" selection-end-line="203" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -151,7 +141,6 @@
         <option value="$PROJECT_DIR$/../risotto/blog.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/web/SearchPage.jsp" />
         <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/Search/Controller/SystemCtrl.java" />
         <option value="$PROJECT_DIR$/src/Search/Controller/SnappFoodAPIBuilder.java" />
@@ -167,6 +156,7 @@
         <option value="$PROJECT_DIR$/web/MenuPage.jsp" />
         <option value="$PROJECT_DIR$/src/Search/Controller/SnappFoodCtrl.java" />
         <option value="$PROJECT_DIR$/web/HomePage.jsp" />
+        <option value="$PROJECT_DIR$/web/SearchPage.jsp" />
         <option value="$PROJECT_DIR$/web/listing.jsp" />
       </list>
     </option>
@@ -613,7 +603,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151795000" />
+    <option name="totallyTimeSpent" value="152138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -638,9 +628,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32930845" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34836066" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34836066" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49615806" visible="true" weight="0.09811321" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49615806" visible="true" weight="0.09811321" />
       <window_info id="Web" order="6" sideWeight="0.50384194" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="7" side_tool="true" />
@@ -956,15 +946,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/SearchPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1275">
-          <caret selection-end-line="5" selection-end-column="32" />
+        <state relative-caret-position="240">
+          <caret line="100" column="24" lean-forward="true" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/listing.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="65" lean-forward="true" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+        <state relative-caret-position="255">
+          <caret line="203" column="29" selection-start-line="203" selection-start-column="29" selection-end-line="203" selection-end-column="29" />
         </state>
       </provider>
     </entry>
