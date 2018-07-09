@@ -1,3 +1,9 @@
+<%@ page import="Search.View.SearchPage" %>
+<%@ page import="org.json.simple.JSONObject" %>
+<%@ page import="org.json.simple.JSONArray" %>
+<%@ page import="Search.Controller.SnappFoodCtrl" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
