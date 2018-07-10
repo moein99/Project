@@ -177,24 +177,8 @@
                             <div class="featured-place-wrap">
                                 <a href="MenuPage.jsp?code=<%out.println(jsonObject.get("restaurantCode"));%>">
                                     <img src="static/images/featured<%out.println(i%3+1);%>.jpg" class="img-fluid" alt="#">
-                                    <span class="featured-rating-orange ">6.5</span>
-                                    <div class="featured-title-box">ظ
+                                    <div class="featured-title-box">
                                         <h6><%out.println(jsonObject.get("restaurantName"));%></h6>
-                                        <p>Restaurant </p> <span>• </span>
-                                        <p>3 Reviews</p> <span> • </span>
-                                        <p><span>$$$</span>$$</p>
-                                        <ul>
-                                            <li><span class="icon-location-pin"></span>
-                                                <p>1301 Avenue, Brooklyn, NY 11230</p>
-                                            </li>
-                                            <li><span class="icon-screen-smartphone"></span>
-                                                <p>+44 20 7336 8898</p>
-                                            </li>
-                                            <li><span class="icon-link"></span>
-                                                <p>https://burgerandlobster.com</p>
-                                            </li>
-
-                                        </ul>
                                         <div class="bottom-icons">
                                             <div class="closed-now">CLOSED NOW</div>
                                             <span class="ti-heart"></span>
