@@ -179,11 +179,6 @@
                                     <img src="static/images/featured<%out.println(i%3+1);%>.jpg" class="img-fluid" alt="#">
                                     <div class="featured-title-box">
                                         <h6><%out.println(jsonObject.get("restaurantName"));%></h6>
-                                        <div class="bottom-icons">
-                                            <div class="closed-now">CLOSED NOW</div>
-                                            <span class="ti-heart"></span>
-                                            <span class="ti-bookmark"></span>
-                                        </div>
                                     </div>
                                 </a>
                             </div>
